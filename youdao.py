@@ -1,4 +1,5 @@
 import random
+import json
 import sys
 import requests
 import hashlib
@@ -15,5 +16,8 @@ class Youdao(object):
         sign = hashlib.md5(signString.encode())
         url = "http://openapi.youdao.com/api?q=" + translateText + "&from=" + fromLanguage + "&to=" + toLanguage + "&appKey=" + self.appKey +  "&salt=" + str(salt) + "&sign=" + sign.hexdigest()
         receiveMsg = requests.post(url)
-
-        print (receiveMsg.text)
+        jsonObj = json.loads(receiveMsg.text)
+        #print (receiveMsg.text)
+        result = jsonObj["translation"]
+        leng = len(result)
+        return result[0]

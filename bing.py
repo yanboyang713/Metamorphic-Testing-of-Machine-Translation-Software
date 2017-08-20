@@ -1,6 +1,24 @@
 import sys
-from microsofttranslator import Translator
+import xml.etree.ElementTree as ET
+from xml.etree import ElementTree
 import requests
+
+class MaxDepth:                     # The target object of the parser
+    def __init__(self):
+        maxDepth = 0
+        depth = 0
+    def start(self, tag, attrib):   # Called for each opening tag.
+        self.depth += 1
+        if self.depth > self.maxDepth:
+            self.maxDepth = self.depth
+    def end(self, tag):             # Called for each closing tag.
+        self.depth -= 1
+    def data(self, data):
+        pass            # We do not need to do anything with data.
+    def close(self):    # Called when all data has been parsed.
+        return self.maxDepth
+
+
 class Bing(object):
     def __init__(self):
         # subscription ID
@@ -16,13 +34,11 @@ class Bing(object):
     def getToken(self):
         receiveMsg = requests.post(self.tokenUrl)
         self.token = receiveMsg.text
-        print (receiveMsg.text)
-        print (receiveMsg.status_code)
-        print (receiveMsg.reason)
-        print (receiveMsg)
+
     def translate(self, translateText, fromLanguage, toLanguage):
         translateUrl = "https://api.microsofttranslator.com/v2/http.svc/Translate"
         params = {'appid': 'Bearer '+ self.token, 'text': translateText, 'from': fromLanguage, 'to': toLanguage}
         headers = {'Accept': 'application/xml'}
         receivedTranslate = requests.get(translateUrl, params=params, headers=headers)
-        print(receivedTranslate.text)
+        tree = ElementTree.fromstring(receivedTranslate.content)
+        return tree.text

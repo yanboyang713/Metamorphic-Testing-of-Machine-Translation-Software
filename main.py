@@ -1,4 +1,5 @@
 import sys
+from nltk import Nltk
 import sched, time
 from youdao import Youdao
 from bing import Bing
@@ -26,13 +27,17 @@ def main():
     #Test translation
     youdao = Youdao()
     #youdao.translate("EN", "zh_CHS", S1)
+    print (youdao.translate("EN", "zh_CHS", "this is a test"))
     bing = Bing()
     fromLanguage = "en"
     toLanguage = "fr"
     translateText = "this is a test, hope well word"
     bing.getToken()
-    bing.translate(translateText, fromLanguage, toLanguage)
+    print (bing.translate(translateText, fromLanguage, toLanguage))
 
+    # nltk
+    ownnltk = Nltk()
+    #ownnltk.checkScore()
     # this is for get a new bing token every 9 mins because one token only vaild 10 mins
     scheduler = sched.scheduler(time.time, time.sleep)
     scheduler.enter(60, 1, getToken, (scheduler, bing))
