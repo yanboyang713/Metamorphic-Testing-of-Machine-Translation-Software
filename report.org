@@ -53,7 +53,7 @@ This is a example
    "translation": ["大丈夫です"]
 }
 All of code for youdao, please have a look youdao.py in code folder
-[[.img/youdaoZhiYun.png
+[[./img/youdaoZhiYun.png
 ]]
 
 ** bing translate
@@ -71,8 +71,8 @@ This is frist step for using bing translator API.
      + In menu All Resources
      + click on your subscription, you can find subscription if in overview and Key 1 and Key 2 in resource management keys
 
-[[.img/azure.png]]
-[[.img/subscription.png]]
+[[./img/azure.png]]
+[[./img/subscription.png]]
 
 *** Using bing API guide
 **** get authentication token
