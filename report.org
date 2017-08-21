@@ -53,8 +53,7 @@ This is a example
    "translation": ["大丈夫です"]
 }
 All of code for youdao, please have a look youdao.py in code folder
-[[./img/youdaoZhiYun.png
-]]
+[[./img/youdaoZhiYun.png]]
 
 ** bing translate
 Bing translate(Microsoft Translate) is a multilingual machine translation cloud service provided by Microsoft. Bing translator API include Text translation, Speech translation and Text to speech. However, I am only using text translation in this project.
