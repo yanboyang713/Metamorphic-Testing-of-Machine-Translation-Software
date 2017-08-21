@@ -1,0 +1,54 @@
+* translate tool
+** youdao translate
+Youdao (有道) is a search engine released by Chinese internet company NetEase (網易).
+This search engine not only support English and Chinese. Also can support lots of others language.
+language spuuort list:
+| language   | code   |
+|------------+--------|
+| Chinese    | zh-CHS |
+| Japanese   | ja     |
+| English    | EN     |
+| Korean     | ko     |
+| French     | fr     |
+| Russion    | ru     |
+| Portuguese | pt     |
+| Spanish    | es     |
+*** Create account, get application key and password
+When you want to using youdao api for translation, First, you must creat a account in YOUDAO ZHI YUN. THis is link http://ai.youdao.com .
+I have choose using my wechat to login ZHI YUN. Because, each time when I log in. I only need scan QR code in my wechat for convenience.
+After you need do some set up for get appKey and key, both are inportance for you send POST requie.
+There is step by step
+- go to application management
+- click my application
+- creat a new application, filed info and create
+- create a translation instance and bind with you application, which is you before you have created.
+
+When you finish all of step you can start using YOUDAO API. :)
+
+*** Using YOUDAO API guide
+This youdao translate API, we can using http or https POST to send our sample data(sentence and paragraph) to youdao and get translated data return by JSON.
+
+youdao api http address: http://openapi.youdao.com/api
+youdao api https address: https://openapi.youdao.com/api
+
+
+This is a exmple for translate good(English) word to chinese's POST URL.
+http://openapi.youdao.com/api?q=good&from=EN&to=zh_CHS&appKey=ff889495-4b45-46d9-8f48-946554334f2a&salt=2&sign=1995882C5064805BC30A39829B779D7B
+
+| Field Name | type | mean                | Must filed | Comment                                                                                   |
+|------------+------+---------------------+------------+-------------------------------------------------------------------------------------------|
+| q          | text | want translate text | True       | must be UTF-8                                                                             |
+| from       | text | from which language | True       | must in language support list(you also can set to auto)                                   |
+| to         | text | target language     | True       | must in language support list(you also can set to auto)                                   |
+| appKey     | text | application key     | True       | you can find in application management in youdao ZHI YUN                                  |
+| salt       | text | random number       | True       |                                                                                           |
+| sign       | text | signiture           | True       | MD5(appKey + q + salt + key) key you can find in application management in YOUDAO ZHI YUN |
+
+You can get a JSON file back.
+In JSON file only have two colum is importance in our system, one is errorCode, and another one is translation
+If errorCode is 0 mean no error. and translation is our most inerest part is our translate result.
+This is a example
+{
+   "errorCode": "0",
+   "translation": ["大丈夫です"]
+}
