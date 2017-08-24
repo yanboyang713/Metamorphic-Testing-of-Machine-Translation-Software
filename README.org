@@ -9,14 +9,20 @@ This project we are apply metamorphic testing to the evaluation of translation s
 * Test case
 In our project, we have two categories of test case from Wikipedia. One is single sentence. Another one is paragraph. We are using a dictionaries as key word put in Wikipedia search engine for get single sentence and paragraph from Wikipedia.
 
+** Wikipedia API
+
 ** Dictionary
-words is a standard file on all Unix and Unix-like operating systems, and is simply a newline-delimited list of dictionary words. It is used, for instance, by spell-checking programs.[1]
+Tushar, Shantanu (2013, pp. 219 - 220) show that WordList(Dictionary) is a standard file on all Unix and Unix-like operating systems. The wordList file is usually stored in /usr/share/dict/words or /usr/dict/words.[1]
+The wordList story more than 60,000 meanful words.
 
-The words file is usually stored in /usr/share/dict/words or /usr/dict/words.
+** Get test case steps
+- We are traverse each key word from Dictionary.
+- Put the key word into Wikipedia search engine(we have using Wikipedia APi)
+- Search this key word summary
+- If this key word have not recored in Wikipedia, We will be ingnore it, traverse the next key word.
+- If have result, all of summary will become our paragraph test case.
+- For the single sentence test case,
 
-On Debian and Ubuntu, the words file is provided by the wordlist package, or its provider packages wbritish, wamerican, etc. On Fedora and Arch, the words file is provided by the words package.
-
-Tushar, Shantanu (2013). Linux Shell Scripting Cookbook. Birmingham, UK.: Packt Publishing. pp. 219–220. ISBN 978-1-78216-275-9.
 * translate tool
 ** youdao translate
 Youdao (有道) is a search engine released by Chinese internet company NetEase (網易).
@@ -94,3 +100,7 @@ This is frist step for using bing translator API.
 
 *** Using bing API guide
 **** get authentication token
+
+
+* Reference List
+Tushar, Shantanu (2013). Linux Shell Scripting Cookbook. Birmingham, UK.: Packt Publishing. pp. 219–220. ISBN 978-1-78216-275-9.
