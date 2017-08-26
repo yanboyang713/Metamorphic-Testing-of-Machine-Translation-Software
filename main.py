@@ -3,8 +3,10 @@ from nltk import Nltk
 import sched, time
 from youdao import Youdao
 from bing import Bing
+from googleTranslator import Google
 from GetLiteral import Get_Literal
 # each 9 mins get a new token for bing translate
+
 def getToken(scheduler, bing):
     print ("Doing stuff...")
 
@@ -28,6 +30,10 @@ def main():
     youdao = Youdao()
     #youdao.translate("EN", "zh_CHS", S1)
     print (youdao.translate("EN", "zh_CHS", "this is a test"))
+
+    google  = Google()
+    print (google.translate('Hello, world!', 'asx'))
+
     bing = Bing()
     fromLanguage = "en"
     toLanguage = "fr"
