@@ -30,6 +30,6 @@ class Google(object):
         # Check that the taget language is valid than return the translation
         if target in self.validLanguages:
             result  = self.translateClient.translate(phrase, target_language=target)
-            return result['translatedText']
+            return result
         else:
             return 'Invalid Language'

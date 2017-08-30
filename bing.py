@@ -2,6 +2,8 @@ import sys
 import xml.etree.ElementTree as ET
 from xml.etree import ElementTree
 import requests
+import time
+from threading import Timer
 
 class MaxDepth:                     # The target object of the parser
     def __init__(self):
@@ -31,6 +33,9 @@ class Bing(object):
         self.tokenUrl = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken?Subscription-Key=" + self.keyOne
         # token
         self.token = ""
+        # refresh token
+        Timer(5, self.__refreshToken, ()).start()
+
     def getToken(self):
         receiveMsg = requests.post(self.tokenUrl)
         self.token = receiveMsg.text
@@ -42,3 +47,7 @@ class Bing(object):
         receivedTranslate = requests.get(translateUrl, params=params, headers=headers)
         tree = ElementTree.fromstring(receivedTranslate.content)
         return tree.text
+
+    def __refreshToken(self):
+        self.getToken()
+        Timer(5, self.__refreshToken, ()).start()

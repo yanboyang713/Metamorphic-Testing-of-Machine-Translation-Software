@@ -1,18 +1,8 @@
 import sys
 from nltk import Nltk
-import sched, time
-from youdao import Youdao
-from bing import Bing
-from googleTranslator import Google
+from commonTranslator import CommonTranslator
 from GetLiteral import Get_Literal
-# each 9 mins get a new token for bing translate
-
-def getToken(scheduler, bing):
-    print ("Doing stuff...")
-
-    bing.getToken()
-    # do your stuff
-    scheduler.enter(60, 1, getToken, (scheduler,bing))
+import time
 
 #main function
 def main():
@@ -26,29 +16,17 @@ def main():
     #S1=l1.Get_Sentence()
     #print(S1)
 
-    #Test translation
-    youdao = Youdao()
-    #youdao.translate("EN", "zh_CHS", S1)
-    print (youdao.translate("EN", "zh_CHS", "this is a test"))
-
-    google  = Google()
-    print (google.translate('Hello, world!', 'asx'))
-
-    bing = Bing()
-    fromLanguage = "en"
-    toLanguage = "fr"
-    translateText = "this is a test, hope well word"
-    bing.getToken()
-    print (bing.translate(translateText, fromLanguage, toLanguage))
+    # Perform translations with a common iunterface
+    translator = CommonTranslator()
+    print( translator.translate('Google', 'Hello, World!', 'fr', 'EN') )
+    print( translator.translate('Bing', 'Hello, World!', 'fr', 'EN') )
+    print( translator.translate('Youdao', 'Hello, World!', 'fr', 'EN') )
+    print( translator.translate('All', 'Hello, World!', 'es', 'EN') )
+    print('Complete')
 
     # nltk
-    ownnltk = Nltk()
+    #ownnltk = Nltk()
     #ownnltk.checkScore()
-    # this is for get a new bing token every 9 mins because one token only vaild 10 mins
-    scheduler = sched.scheduler(time.time, time.sleep)
-    scheduler.enter(60, 1, getToken, (scheduler, bing))
-    scheduler.run()
-
 
 if __name__ == "__main__":
   main()
