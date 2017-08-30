@@ -32,4 +32,4 @@ class Google(object):
             result  = self.translateClient.translate(phrase, target_language=target)
             return result
         else:
-            return 'Invalid Language'
+            return None

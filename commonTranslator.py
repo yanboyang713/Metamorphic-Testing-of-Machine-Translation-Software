@@ -46,7 +46,10 @@ class CommonTranslator(object):
     # This function is responsible for performing all Google Translations
     def __translateGoogle(self, text, output_lang):
         translated_text = self.__googleTranslator.translate(text, output_lang)
-        return translated_text['translatedText']
+        if translated_text != None:
+            return translated_text['translatedText']
+        else:
+            return None
 
     # This function is responsible for performing all Bing Translations
     def __translateBing(self, text, output_lang, input_lang):
