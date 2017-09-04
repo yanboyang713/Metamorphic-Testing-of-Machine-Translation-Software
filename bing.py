@@ -1,4 +1,5 @@
 import sys
+import sched, time
 import xml.etree.ElementTree as ET
 from xml.etree import ElementTree
 import requests
@@ -19,6 +20,20 @@ class Bing(object):
         self.token = ""
         # refresh token
         Timer(5, self.__refreshToken, ()).start()
+
+# this is for get a new bing token every 9 mins because one token only vaild 10 mins
+ +    scheduler = sched.scheduler(time.time, time.sleep)
+ +    scheduler.enter(60, 1, getToken, (scheduler, bing))
+ +    scheduler.run()
+
+
+
+ def getToken(scheduler, bing):
+ +    print ("Doing stuff...")
+ +
+ +    bing.getToken()
+ +    # do your stuff
+ +    scheduler.enter(60, 1, getToken, (scheduler,bing))
 
     def getToken(self):
         receiveMsg = requests.post(self.tokenUrl)
