@@ -4,18 +4,56 @@ import wikipedia
 
 class Get_Literal(object):
     def __init__(self):
-        self.url="http://www-personal.umich.edu/~jlawler/wordlist"
-        self.wordlist=''
-        self.word=''
-        self.paragraph=''
-        self.sentences=''
-       # self.rand=''
-        #self.count=0
+        # wordlist is key word for search test data in wikipedia. There are two kind of test data, one is paragraph, another one is single sentences
+        self.wordlistUrl = "http://www-personal.umich.edu/~jlawler/wordlist"
+        self.wordlist = ''
+        self.wordlistSize = 0
 
+        #for paragraph test data
+        self.paragraph = []
+        self.paragraphSize = 0
+
+        #for sentences test data
+        self.sentences = ''
+        self.sentenceSize = 0
+
+        self.main()
+
+        #run at begin get wordlist
+        self.Get_Wordlist()
+
+
+    def main(self):
+        askGetwordlist = input ("Do you want to get wordlist as key word search in wikipedia in Internet? (Y/n) : ")
     def Get_Wordlist(self):
-        self.wordlist=requests.get(url=self.url)
-        self.wordlist=self.wordlist.text.split()
- #       print(self.wordlist[18])
+        self.wordlist = requests.get(url = self.wordlistUrl)
+        self.wordlist = self.wordlist.text.split()
+        self.wordlistSize = len(self.wordlist)
+        print (self.wordlistSize)
+        #print(self.wordlist[18])
+
+    def setTestData(self):
+        for i in range(0, self.wordlistSize):
+            try:
+                temp = wikipedia.summary(self.wordlist[i])
+                print ("get")
+            except:
+                continue
+            finally:
+                    self.paragraph.extend(temp)
+                    self.sentences.extend(self.paragraph[self.paragraphSize].split('.'))
+
+        self.paragraphSize = len(self.paragraph)
+        self.sentenceSize = len(self.sentences)
+
+    def print(self):
+        print("print all of paragraph : )")
+        for i in range(0, self.paragraphSize):
+            print(self.paragraph[i])
+
+        print("print all of sentences : )")
+        for i in range(0, self.sentenceSize):
+            print(self.sentences[i])
 
     def Capture_Word(self,num):
        # rand1=random.randint(0,len(self.wordlist)-1)
