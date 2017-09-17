@@ -30,21 +30,60 @@ class Get_Literal(object):
         self.wordlist = self.wordlist.text.split()
         self.wordlistSize = len(self.wordlist)
         print (self.wordlistSize)
+
+        '''
+        #write the wordlist into the file "wordlist.txt"
+        for i in range(0,self.wordlistSize):
+            f1=open("Wordlist.txt","a+",encoding='utf-8')
+            f1.writelines(self.wordlist[i])
+            f1.writelines("\n")
+            f1.close()
+        '''
         #print(self.wordlist[18])
 
     def setTestData(self):
+        exceptFlag = False
+        #count = 0
         for i in range(0, self.wordlistSize):
             try:
-                temp = wikipedia.summary(self.wordlist[i])
+                exceptFlag = False
+                paragraph = wikipedia.summary(self.wordlist[i])
                 print ("get")
             except:
-                continue
+                exceptFlag = True
+                #continue
             finally:
-                    self.paragraph.extend(temp)
-                    self.sentences.extend(self.paragraph[self.paragraphSize].split('.'))
+                    #self.paragraph.extend(paragraph)
+                    #self.sentences.extend(self.paragraph[self.paragraphSize].split('.'))
+                if exceptFlag == False:
+                    '''
+                    #Write the paragraphs into the txt file
+                    f2=open("Paragraph.txt","a+",encoding='utf-8')
+                    f2.writelines(self.wordlist[i])
+                    f2.writelines("__________:")
+                    f2.writelines(paragraph)
+                    #f2.writelines("\n"+"PNUM=")
+                    #f2.writelines(count)
+                    f2.writelines("\n" + " -----------------------------END---------------------------------" + "\n")
+                    f2.close()
+                    #count=count+1
+                    '''
+                    #Write the sentences into  the txt file
+                    sentences = paragraph.split('.')
+                    #print(sentences[0])
+                    self.sentenceSize = len(sentences)
+                    print(self.sentenceSize)
+                    for j in range(0, self.sentenceSize):
+                        print("*******")
+                        f3 = open("Sentences.txt", "a+", encoding='utf-8')
+                        f3.writelines(sentences[j])
+                        f3.writelines("\n" + " -----------------------------END---------------------------------" + "\n")
+                        f3.close()
 
-        self.paragraphSize = len(self.paragraph)
-        self.sentenceSize = len(self.sentences)
+
+
+        #self.paragraphSize = len(self.paragraph)
+        #self.sentenceSize = len(self.sentences)
 
     def print(self):
         print("print all of paragraph : )")
