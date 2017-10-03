@@ -12,10 +12,15 @@ class Get_Literal(object):
         #for paragraph test data
         self.paragraph = []
         self.paragraphSize = 0
+        self.paragraphCount = 0
 
         #for sentences test data
         self.sentences = ''
         self.sentenceSize = 0
+        self.sentenceCount= 0
+
+        #for the list of  random number
+        self.rand_list=[]
 
         self.main()
 
@@ -28,26 +33,28 @@ class Get_Literal(object):
     def Get_Wordlist(self):
         self.wordlist = requests.get(url = self.wordlistUrl)
         self.wordlist = self.wordlist.text.split()
-        self.wordlistSize = len(self.wordlist)
-        print (self.wordlistSize)
+        #self.wordlistSize = len(self.wordlist)
+        #self.wordlistSize = 1000
+        self.rand_list = random.sample(range(0, len(self.wordlist)), 1000)
+        print (self.rand_list[0])
 
-        '''
+
         #write the wordlist into the file "wordlist.txt"
-        for i in range(0,self.wordlistSize):
+        for i in range(0,1000):
             f1=open("Wordlist.txt","a+",encoding='utf-8')
-            f1.writelines(self.wordlist[i])
+            f1.writelines(self.wordlist[self.rand_list[i]])
             f1.writelines("\n")
             f1.close()
-        '''
+
         #print(self.wordlist[18])
 
     def setTestData(self):
         exceptFlag = False
         #count = 0
-        for i in range(0, self.wordlistSize):
+        for i in range(0, 1000):
             try:
                 exceptFlag = False
-                paragraph = wikipedia.summary(self.wordlist[i])
+                paragraph = wikipedia.summary(self.wordlist[self.rand_list[i]])
                 print ("get")
             except:
                 exceptFlag = True
@@ -56,32 +63,42 @@ class Get_Literal(object):
                     #self.paragraph.extend(paragraph)
                     #self.sentences.extend(self.paragraph[self.paragraphSize].split('.'))
                 if exceptFlag == False:
-                    '''
+                   # '''
                     #Write the paragraphs into the txt file
                     f2=open("Paragraph.txt","a+",encoding='utf-8')
-                    f2.writelines(self.wordlist[i])
-                    f2.writelines("__________:")
+                    f2.writelines(str(self.paragraphCount))
+                    f2.writelines(":  ")
+                    f2.writelines(self.wordlist[self.rand_list[i]])
+                    f2.writelines("_____:")
                     f2.writelines(paragraph)
                     #f2.writelines("\n"+"PNUM=")
                     #f2.writelines(count)
                     f2.writelines("\n" + " -----------------------------END---------------------------------" + "\n")
                     f2.close()
+                    self.paragraphCount=self.paragraphCount+1
                     #count=count+1
-                    '''
+
+                    #'''
                     #Write the sentences into  the txt file
                     sentences = paragraph.split('.')
                     #print(sentences[0])
                     self.sentenceSize = len(sentences)
                     print(self.sentenceSize)
                     for j in range(0, self.sentenceSize):
-                        print("*******")
-                        f3 = open("Sentences.txt", "a+", encoding='utf-8')
-                        f3.writelines(sentences[j])
-                        f3.writelines("\n" + " -----------------------------END---------------------------------" + "\n")
-                        f3.close()
+                        if self.sentenceCount<1000:
+                            print("*******")
+                            f3 = open("Sentences.txt", "a+", encoding='utf-8')
+                            f3.writelines(str(self.sentenceCount))
+                            f3.writelines(":  ")
+                            f3.writelines(sentences[j])
+                            f3.writelines("\n" + " -----------------------------END---------------------------------" + "\n")
+                            f3.close()
+                            self.sentenceCount=self.sentenceCount+1
+                        else:
+                            continue
+                    '''
 
-
-
+        '''
         #self.paragraphSize = len(self.paragraph)
         #self.sentenceSize = len(self.sentences)
 
