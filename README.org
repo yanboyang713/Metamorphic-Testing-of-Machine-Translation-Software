@@ -8,6 +8,8 @@ This project we are apply metamorphic testing to the evaluation of translation s
 
 * Test case
 In our project, we have two categories of test case from Wikipedia. One is single sentence. Another one is paragraph. We are using a dictionaries as key word put in Wikipedia search engine for get single sentence and paragraph from Wikipedia.
+These two test cases could be analysed in contrast afterwards.
+
 
 ** Wikipedia API
 
@@ -15,13 +17,28 @@ In our project, we have two categories of test case from Wikipedia. One is singl
 Tushar, Shantanu (2013, pp. 219 - 220) show that WordList(Dictionary) is a standard file on all Unix and Unix-like operating systems. The wordList file is usually stored in /usr/share/dict/words or /usr/dict/words.[1]
 The wordList story more than 60,000 meanful words.
 
-** Get test case steps
-- We are traverse each key word from Dictionary.
+In this project, an online website is applied to obatin the dictionary which has generated the wordlist programmed by stndards Unix tools.[2]
+Due to the result to be catched in python will be a list-structure ASCII, the reuslt needs to be post-edited with spliting into individual words for using.   
+
+** Get test case
+To be make to result valid and accurate, the size test-semaple is supposed to be large enough. 
+Considerd about the size of our group and the tools we have, the quatity of the testing sample is decided to be 1000 for both paragraph and senctence.
+In the dictionary there are near 70 thousands words , therefore, we generate a list of 1000 random numbers in range of (0,69903) as the indexes of wordlist to select each word.
+This is an ideal situation because some words will be not able to find correctly in the actual programme running, which will be explained later. Therefore the random numbers is likely to be more than 1000.
+The same thought is applied in sentence scratching. The difference is that instead of produce random numbers it just need to keep count the quantuty of sentences until reaching 1000.  
+
+The specific steps are:
+- Traverse each key word from Dictionary.
 - Put the key word into Wikipedia search engine(we have using Wikipedia APi)
-- Search this key word summary
+- Search summary part of this key word in Wikipedia.
 - If this key word have not recored in Wikipedia, We will be ingnore it, traverse the next key word.
 - If have result, all of summary will become our paragraph test case.
-- For the single sentence test case,
+- Since the paragraph we get is in list structure of senctences, the single sentence test case can be produced through spliting the paragraph test case.
+ 
+As motioned above, there will be some words do not have the summary part or even not exist in wikipidia. 
+Thus we use an exception to deal with such cases so that the programme will jump over this incorrect search without recording and move to the next search.
+For every word, paragraph and secntence having been obtained, they will be written into three text files respectivtily as the results for the further translation and evalutaion.
+
 
 * translate tool
 ** youdao translate
@@ -103,4 +120,6 @@ This is frist step for using bing translator API.
 
 
 * Reference List
-Tushar, Shantanu (2013). Linux Shell Scripting Cookbook. Birmingham, UK.: Packt Publishing. pp. 219–220. ISBN 978-1-78216-275-9.
+[1] Tushar, Shantanu (2013). Linux Shell Scripting Cookbook. Birmingham, UK.: Packt Publishing. pp. 219–220. ISBN 978-1-78216-275-9.
+[2] An English Word List. 2017. An English Word List. [ONLINE] Available at: http://www-personal.umich.edu/~jlawler/wordlist.html. [Accessed 05 October 2017].
+[3] 
