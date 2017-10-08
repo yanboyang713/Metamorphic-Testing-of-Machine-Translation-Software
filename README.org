@@ -120,6 +120,6 @@ This is frist step for using bing translator API.
 
 
 * Reference List
-[1] Tushar, Shantanu (2013). Linux Shell Scripting Cookbook. Birmingham, UK.: Packt Publishing. pp. 219–220. ISBN 978-1-78216-275-9.
-[2] An English Word List. 2017. An English Word List. [ONLINE] Available at: http://www-personal.umich.edu/~jlawler/wordlist.html. [Accessed 05 October 2017].
-[3] 
+** [1] Tushar, Shantanu (2013). Linux Shell Scripting Cookbook. Birmingham, UK.: Packt Publishing. pp. 219–220. ISBN 978-1-78216-275-9.
+** [2] An English Word List. 2017. An English Word List. [ONLINE] Available at: http://www-personal.umich.edu/~jlawler/wordlist.html. [Accessed 05 October 2017].
+** [3]
