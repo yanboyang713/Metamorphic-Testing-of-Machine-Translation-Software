@@ -14944,3 +14944,258 @@ The group's members have been deeply involved in the composition and production 
  -----------------------------END---------------------------------
 
  -----------------------------END---------------------------------
+0:  Acacia, commonly known as the wattles or acacias, is a large genus of shrubs and trees in the subfamily Mimosoideae of the pea family Fabaceae
+ -----------------------------END---------------------------------
+1:   Initially it comprised a group of plant species native to Africa and Australia, with the first species A
+ -----------------------------END---------------------------------
+2:   nilotica described by Linnaeus
+ -----------------------------END---------------------------------
+3:   Controversy erupted in the early 2000s when it became evident that the genus as it stood was not monophyletic, and that several divergent lineages needed to be placed in separate genera
+ -----------------------------END---------------------------------
+4:   It turned out that one lineage comprising over 900 species mainly native to Australia was not closely related to the mainly African lineage that contained A
+ -----------------------------END---------------------------------
+5:   nilotica—the first and type species
+ -----------------------------END---------------------------------
+6:   This meant that the Australian lineage (by far the most prolific in number of species) would need to be renamed
+ -----------------------------END---------------------------------
+7:   Botanist Les Pedley named this group Racosperma, which was inconsistently adopted
+ -----------------------------END---------------------------------
+8:   Australian botanists proposed that this would be more disruptive than setting a different type species (A
+ -----------------------------END---------------------------------
+9:   penninervis) and allowing this large number of species to remain Acacia, resulting in the two African lineages being renamed Vachellia and Senegalia, and the two New World lineages renamed Acaciella and Mariosousa
+ -----------------------------END---------------------------------
+10:   This was officially adopted, but many botanists from Africa and elsewhere disagreed that this was necessary
+ -----------------------------END---------------------------------
+11:  
+A number of species have been introduced to various parts of the world, and two million hectares of commercial plantations have been established
+ -----------------------------END---------------------------------
+12:   The heterogeneous group varies considerably in habit, from mat-like subshrubs to canopy trees in forest
+ -----------------------------END---------------------------------
+13:  
+
+
+ -----------------------------END---------------------------------
+14:  The Four Horsemen of the Apocalypse are described in the last book of the New Testament of the Bible, called the Book of Revelation of Jesus Christ to John of Patmos, at 6:1-8
+ -----------------------------END---------------------------------
+15:   The chapter tells of a book or scroll in God's right hand that is sealed with seven seals
+ -----------------------------END---------------------------------
+16:   The Lamb of God opens the first four of the seven seals, which summons four beings that ride out on white, red, black, and pale horses
+ -----------------------------END---------------------------------
+17:   Though theologians and popular culture differ on the first Horseman, the four riders are often seen as symbolizing Conquest or Pestilence (and less frequently, the Christ or the Antichrist), War, Famine, and Death
+ -----------------------------END---------------------------------
+18:   The Christian apocalyptic vision is that the Four Horsemen are to set a divine apocalypse upon the world as harbingers of the Last Judgment
+ -----------------------------END---------------------------------
+19:   One reading ties the Four Horsemen to the history of the Roman Empire subsequent to the era in which the Book of Revelation was written
+ -----------------------------END---------------------------------
+20:   That is, they are a symbolic prophecy of the subsequent history of the Empire
+ -----------------------------END---------------------------------
+21:  
+ -----------------------------END---------------------------------
+22:  A narrative or story is a report of connected events, real or imaginary, presented in a sequence of written or spoken words, or still or moving images, or both
+ -----------------------------END---------------------------------
+23:   The word derives from the Latin verb narrare, "to tell", which is derived from the adjective gnarus, "knowing" or "skilled"
+ -----------------------------END---------------------------------
+24:  
+Narrative can be organized in a number of thematic or formal categories: non-fiction (such as definitively including creative non-fiction, biography, journalism, transcript poetry, and historiography); fictionalization of historical events (such as anecdote, myth, legend, and historical fiction); and fiction proper (such as literature in prose and sometimes poetry, such as short stories, novels, and narrative poems and songs, and imaginary narratives as portrayed in other textual forms, games, or live or recorded performances)
+ -----------------------------END---------------------------------
+25:  
+Narrative is found in all forms of human creativity, art, and entertainment, including speech, literature, theatre, music and song, comics, journalism, film, television and video, video games, radio, gameplay, unstructured recreation, and performance in general, as well as some painting, sculpture, drawing, photography, and other visual arts, as long as a sequence of events is presented
+ -----------------------------END---------------------------------
+26:   Several art movements, such as modern art, refuse the narrative in favor of the abstract and conceptual
+ -----------------------------END---------------------------------
+27:  
+Oral storytelling is the earliest method for sharing narratives
+ -----------------------------END---------------------------------
+28:    During most people's childhoods, narratives are used to guide them on proper behavior, cultural history, formation of a communal identity, and values, as especially studied in anthropology today among traditional indigenous peoples
+ -----------------------------END---------------------------------
+29:  
+Narratives may also be nested within other narratives, such as narratives told by an unreliable narrator (a character) typically found in noir fiction genre
+ -----------------------------END---------------------------------
+30:   An important part of narration is the narrative mode, the set of methods used to communicate the narrative through a process narration (see also "Narrative Aesthetics" below)
+ -----------------------------END---------------------------------
+31:  
+Along with exposition, argumentation, and description, narration, broadly defined, is one of four rhetorical modes of discourse
+ -----------------------------END---------------------------------
+32:   More narrowly defined, it is the fiction-writing mode in which the narrator communicates directly to the reader
+ -----------------------------END---------------------------------
+33:  
+ -----------------------------END---------------------------------
+34:  Authentication (from Greek: αὐθεντικός authentikos, "real, genuine", from αὐθέντης authentes, "author") is the act of confirming the truth of an attribute of a single piece of data claimed true by an entity
+ -----------------------------END---------------------------------
+35:   In contrast with identification, which refers to the act of stating or otherwise indicating a claim purportedly attesting to a person or thing's identity, authentication is the process of actually confirming that identity
+ -----------------------------END---------------------------------
+36:   It might involve confirming the identity of a person by validating their identity documents, verifying the authenticity of a website with a digital certificate, determining the age of an artifact by carbon dating, or ensuring that a product is what its packaging and labeling claim to be
+ -----------------------------END---------------------------------
+37:   In other words, authentication often involves verifying the validity of at least one form of identification
+ -----------------------------END---------------------------------
+38:  
+ -----------------------------END---------------------------------
+39:  Conchology (from Ancient Greek: κόγχος konkhos, "cockle") is the study of mollusc shells
+ -----------------------------END---------------------------------
+40:   Conchology is one aspect of malacology, the study of molluscs; however, malacology is the study of molluscs as whole organisms, whereas conchology is confined to the study of their shells
+ -----------------------------END---------------------------------
+41:   It includes the study of land and freshwater mollusc shells as well as seashells and extends to the study of a gastropod's operculum
+ -----------------------------END---------------------------------
+42:  
+Conchology is now sometimes seen as an archaic study, because relying on only one aspect of an organism's morphology can be misleading
+ -----------------------------END---------------------------------
+43:   However, a shell often gives at least some insight into molluscan taxonomy, and historically the shell was often the only part of exotic species that was available for study
+ -----------------------------END---------------------------------
+44:   Even in current museum collections it is common for the dry material (shells) to greatly exceed the amount of material that is preserved whole in alcohol
+ -----------------------------END---------------------------------
+45:  
+Conchologists mainly deal with four molluscan orders: the gastropods (snails), bivalves (clams), Polyplacophora (chitons) and Scaphopoda (tusk shells)
+ -----------------------------END---------------------------------
+46:   Cephalopods only have small internal shells, with the exception of the Nautiloidea
+ -----------------------------END---------------------------------
+47:   Some groups, such as the sea slug nudibranchs, have lost their shells altogether, while in others it has been replaced by a protein support structure
+ -----------------------------END---------------------------------
+48:  
+ -----------------------------END---------------------------------
+49:  Electronic Arts Inc
+ -----------------------------END---------------------------------
+50:   (EA) is an American video game company headquartered in Redwood City, California
+ -----------------------------END---------------------------------
+51:   Founded and incorporated on May 28, 1982 by Trip Hawkins, the company was a pioneer of the early home computer games industry and was notable for promoting the designers and programmers responsible for its games
+ -----------------------------END---------------------------------
+52:   As of September 2017, Electronic Arts is the second-largest gaming company in the Americas and Europe by revenue and market capitalization after Activision Blizzard and ahead of Take-Two Interactive
+ -----------------------------END---------------------------------
+53:   The company sparked controversies over its advertising efforts, and acquisition of other studios
+ -----------------------------END---------------------------------
+54:  
+Currently, EA develops and publishes games under several labels including EA Sports titles FIFA, Madden NFL, NHL, NCAA Football, NBA Live, and SSX
+ -----------------------------END---------------------------------
+55:   Other EA labels produce established franchises such as Battlefield, Need for Speed, The Sims, Medal of Honor, Command & Conquer, as well as newer franchises such as Crysis, Dead Space, Mass Effect, Dragon Age, Army of Two, Titanfall and Star Wars: Knights of the Old Republic, produced in partnership with LucasArts
+ -----------------------------END---------------------------------
+56:   EA also owns and operates major gaming studios, EA Tiburon in Orlando, EA Canada in Burnaby, BioWare in Edmonton as well as Montreal, and DICE in Sweden
+ -----------------------------END---------------------------------
+57:  
+ -----------------------------END---------------------------------
+58:  A counter-insurgency or counterinsurgency (COIN) can be defined as "comprehensive civilian and military efforts taken to simultaneously defeat and contain insurgency and address its root causes"
+ -----------------------------END---------------------------------
+59:   An insurgency is a rebellion against a constituted authority when those taking part in the rebellion are not recognized as belligerents
+ -----------------------------END---------------------------------
+60:   It is
+
+the organized use of subversion and violence to seize, nullify or challenge political control of a region
+ -----------------------------END---------------------------------
+61:   As such, it is primarily a political struggle, in which both sides use armed force to create space for their political, economic and influence activities to be effective
+ -----------------------------END---------------------------------
+62:  
+
+Counter-insurgency campaigns of duly-elected or politically recognized governments take place during war, occupation by a foreign military or police force, and when internal conflicts that involve subversion and armed rebellion occur
+ -----------------------------END---------------------------------
+63:   The most effective counterinsurgency campaigns
+
+integrate and synchronize political, security, economic, andinformational components that reinforce governmental legitimacy and effectiveness while reducing insurgent influence over the population
+ -----------------------------END---------------------------------
+64:   COIN strategies should be designed to simultaneously protect the population from insurgent violence; strengthen the legitimacy and capacity of government institutions to govern responsibly and marginalize insurgents politically, socially, and economically
+ -----------------------------END---------------------------------
+65:  
+ -----------------------------END---------------------------------
+66:  Edinburgh ( or ; Scottish Gaelic: Dùn Èideann [ˈt̪uːn ˈeːtʲən̪ˠ]) is the capital city of Scotland and one of its 32 council areas
+ -----------------------------END---------------------------------
+67:   It is located in Lothian on the Firth of Forth's southern shore
+ -----------------------------END---------------------------------
+68:  
+Recognised as the capital of Scotland since at least the 15th century, Edinburgh is home to the Scottish Parliament and the seat of the monarchy in Scotland
+ -----------------------------END---------------------------------
+69:   Historically part of Midlothian, the city has long been a centre of education, particularly in the fields of medicine, Scots law, literature, the sciences and engineering
+ -----------------------------END---------------------------------
+70:   It is the second largest financial centre in the United Kingdom and the city's historical and cultural attractions have made it the United Kingdom's second most popular tourist destination, attracting over one million overseas visitors each year
+ -----------------------------END---------------------------------
+71:  
+Edinburgh is Scotland's second most populous city and the seventh most populous in the United Kingdom
+ -----------------------------END---------------------------------
+72:   The 2016 official population estimates are 464,990 for the city of Edinburgh, 507,170 for the local authority area, and 1,339,380 for the city region as of 2014 Edinburgh lies at the heart of the Edinburgh and South East Scotland city region comprising East Lothian, Edinburgh, Fife, Midlothian, Scottish Borders and West Lothian
+ -----------------------------END---------------------------------
+73:  
+The city is the annual venue of the General Assembly of the Church of Scotland
+ -----------------------------END---------------------------------
+74:   It is home to national institutions such as the National Museum of Scotland, the National Library of Scotland and the Scottish National Gallery
+ -----------------------------END---------------------------------
+75:   The University of Edinburgh, founded in 1582 and now one of four in the city, was placed 17th in the QS World University Rankings in 2013 and 2014
+ -----------------------------END---------------------------------
+76:   The city is also famous for the Edinburgh International Festival and the Fringe, the latter being the world's largest annual international arts festival
+ -----------------------------END---------------------------------
+77:   Historic sites in Edinburgh include Edinburgh Castle, Holyrood Palace, the churches of St
+ -----------------------------END---------------------------------
+78:   Giles, Greyfriars and the Canongate, and the extensive Georgian New Town, built in the 18th century
+ -----------------------------END---------------------------------
+79:   Edinburgh's Old Town and New Town together are listed as a UNESCO World Heritage Site, which has been managed by Edinburgh World Heritage since 1999
+ -----------------------------END---------------------------------
+80:  
+ -----------------------------END---------------------------------
+81:  In geometry, a torus (plural tori) is a surface of revolution generated by revolving a circle in three-dimensional space about an axis coplanar with the circle
+ -----------------------------END---------------------------------
+82:   If the axis of revolution does not touch the circle, the surface has a ring shape and is called a torus of revolution
+ -----------------------------END---------------------------------
+83:  
+Real-world examples of toroidal objects include inner tubes, rings, doughnuts, and bagels
+ -----------------------------END---------------------------------
+84:  
+A torus should not be confused with a solid torus, which is formed by rotating a disc, rather than a circle, around an axis
+ -----------------------------END---------------------------------
+85:   A solid torus is a torus plus the volume inside the torus
+ -----------------------------END---------------------------------
+86:   Real-world approximations include doughnuts, vadai or vada, many lifebuoys, and O-rings
+ -----------------------------END---------------------------------
+87:  
+In topology, a ring torus is homeomorphic to the Cartesian product of two circles: S1 × S1, and the latter is taken to be the definition in that context
+ -----------------------------END---------------------------------
+88:   It is a compact 2-manifold of genus 1
+ -----------------------------END---------------------------------
+89:   The ring torus is one way to embed this space into three-dimensional Euclidean space, but another way to do this is the Cartesian product of the embedding of S1 in the plane
+ -----------------------------END---------------------------------
+90:   This produces a geometric object called the Clifford torus, a surface in 4-space
+ -----------------------------END---------------------------------
+91:  
+In the field of topology, a torus is any topological space that is topologically equivalent to a torus
+ -----------------------------END---------------------------------
+92:  
+ -----------------------------END---------------------------------
+93:  Golf stroke mechanics is the means by which golfers make decisions (selecting clubs, selecting shots) and execute them (making shots) in the sport of golf
+ -----------------------------END---------------------------------
+94:   For all golfers, it consists of a pre-stroke, in which golfers choose which club they want and their stance, and the actual stroke
+ -----------------------------END---------------------------------
+95:   The stroke is a complex motion and there is still disagreement on what constitutes a "good" golf swing
+ -----------------------------END---------------------------------
+96:   In Work and Power Analysis of the Golf Swing, Nesbit and Serrano suggest the golf swing has been studied by scientists and mathematicians who have developed various equations to help explain the complexity of the swing
+ -----------------------------END---------------------------------
+97:   It is generally agreed that a successful and consistent golf swing requires precise timing and mechanics, from the grip and position of one's fingers, to the position and movement of the feet
+ -----------------------------END---------------------------------
+98:   At any moment of the swing, whether back-swing, downswing, or upswing, something can go wrong that will throw off the whole body and result in a mishit
+ -----------------------------END---------------------------------
+99:   The entire swing motion should move on a plane in a fluid manner
+ -----------------------------END---------------------------------
+100:   The plane can be characterized as horizontal or vertical
+ -----------------------------END---------------------------------
+101:  
+ -----------------------------END---------------------------------
+102:  Venality is a vice associated with being bribeable, cruel, selfish, or of selling one's services or power, especially when people are intended to act in a decent way instead
+ -----------------------------END---------------------------------
+103:   In its most recognizable form, dishonesty, venality causes people to lie and steal for their own personal advantage, and is related to bribery and nepotism, among other vices
+ -----------------------------END---------------------------------
+104:  
+ -----------------------------END---------------------------------
+105:  Irrigation is the application of controlled amounts of water to plants at needed intervals
+ -----------------------------END---------------------------------
+106:   Irrigation helps grow agricultural crops, maintain landscapes, and revegetate disturbed soils in dry areas and during periods of inadequate rainfall
+ -----------------------------END---------------------------------
+107:   Irrigation also has other uses in crop production, including frost protection, suppressing weed growth in grain fields and preventing soil consolidation
+ -----------------------------END---------------------------------
+108:   In contrast, agriculture that relies only on direct rainfall is referred to as rain-fed or dry land farming
+ -----------------------------END---------------------------------
+109:  
+Irrigation systems are also used for cooling livestock, dust suppression, disposal of sewage, and in mining
+ -----------------------------END---------------------------------
+110:   Irrigation is often studied together with drainage, which is the removal of surface and sub-surface water from a given area
+ -----------------------------END---------------------------------
+111:  
+
+Irrigation has been a central feature of agriculture for over 5,000 years and is the product of many cultures
+ -----------------------------END---------------------------------
+112:   Historically, it was the basis for economies and societies across the globe, from Asia to the Southwestern United States
+ -----------------------------END---------------------------------
+113:  
+ -----------------------------END---------------------------------
