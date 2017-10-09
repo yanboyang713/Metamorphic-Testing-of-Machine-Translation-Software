@@ -8,32 +8,18 @@ from threading import Timer
 
 class Bing(object):
     def __init__(self):
-        # subscription ID
-        self.subscriptionID= "c3136e53-8485-4dc0-b2fb-99ba109b8508"
-        # key one
-        self.keyOne = "aad8cda03b66483da611e75226208cd8"
-        #key two
-        self.keyTwo = "c3ea56f82dd5420cb0a08ea112726034"
-        # tokenURL
-        self.tokenUrl = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken?Subscription-Key=" + self.keyOne
-        # token
-        self.token = ""
-        # refresh token
-        Timer(5, self.__refreshToken, ()).start()
-
-# this is for get a new bing token every 9 mins because one token only vaild 10 mins
- +    scheduler = sched.scheduler(time.time, time.sleep)
- +    scheduler.enter(60, 1, getToken, (scheduler, bing))
- +    scheduler.run()
-
-
-
- def getToken(scheduler, bing):
- +    print ("Doing stuff...")
- +
- +    bing.getToken()
- +    # do your stuff
- +    scheduler.enter(60, 1, getToken, (scheduler,bing))
+            # subscription ID
+            self.subscriptionID= "c3136e53-8485-4dc0-b2fb-99ba109b8508"
+            # key one
+            self.keyOne = "aad8cda03b66483da611e75226208cd8"
+            #key two
+            self.keyTwo = "c3ea56f82dd5420cb0a08ea112726034"
+            # tokenURL
+            self.tokenUrl = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken?Subscription-Key=" + self.keyOne
+            # token
+            self.token = ""
+            # refresh token
+            Timer(5, self.__refreshToken, ()).start()
 
     def getToken(self):
         receiveMsg = requests.post(self.tokenUrl)
