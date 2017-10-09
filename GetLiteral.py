@@ -1,6 +1,7 @@
 import requests
 import random
 import wikipedia
+from openpyxl import Workbook
 
 class Get_Literal(object):
     def __init__(self):
@@ -22,7 +23,7 @@ class Get_Literal(object):
         self.main()
 
     def main(self):
-        self.askSetNewTestData = input ("Do you want to set new test data? (Y/n) : ")
+        self.askSetNewTestData = input ("Do you want to set new test "Japanese"data? (Y/n) : ")
         if self.askSetNewTestData == 'Y' or self.askSetNewTestData == 'y':
             self.numberOfTestData = input ("How many sentences do you want to generate? ")
             self.setTestData()
@@ -51,6 +52,11 @@ class Get_Literal(object):
         sentencesFile = open("Sentences.txt", "w", encoding='utf-8')
         sentencesCount = 0
         index = 0
+
+        workbook = Workbook()
+        workSheetOne = workbook.active
+        workSheetOne.title = "Chinese"
+
         while sentencesCount < int(self.numberOfTestData):
             try:
                 exceptFlag = False
@@ -66,6 +72,13 @@ class Get_Literal(object):
                     sentencesFile.writelines('.')
                     sentencesFile.writelines("\n")
                     sentencesCount += 1
+                    workSheetOne['A' + str(sentencesCount)] = sentences[0] + "."
                 index += 1
         sentencesFile.close()
+
+        workSheetTwo = workbook.copy_worksheet (workSheetOne)
+        workSheetTwo.title = "Swedish"
+        workSheetThree = workbook.copy_worksheet (workSheetOne)
+        workSheetThree.title = "Japanese"
+        workbook.save("csci318.xlsx")
         print ("finah set test data")
