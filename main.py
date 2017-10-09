@@ -7,6 +7,7 @@ import time
 #main function
 def main():
     #Test obtain paragraph & sentence
+    setTestData = Get_Literal()
     #l1=Get_Literal()
     #l1.setTestData()
     #print ("finish set up data")
@@ -19,6 +20,7 @@ def main():
     #print(S1)
 
     # Perform translations with a common iunterface
+'''
 
     translator = CommonTranslator()
     print( translator.translate('Google', 'Hello, World!', 'fr', 'EN') )
@@ -27,6 +29,7 @@ def main():
     print( translator.translate('All', 'Hello, World!', 'es', 'EN') )
     print('Complete')
 
+'''
     # nltk
     #ownnltk = Nltk()
     #ownnltk.checkScore()
