@@ -58,7 +58,7 @@ def main():
 
     # Open the oringinal sentences list
     input_file = openpyxl.load_workbook(filename=input_file_name, read_only=True)
-    sentence_list = input_file['Chinese']
+    sentence_list = input_file['English']
     try:
         for line_counter in range(input_selection[0], input_selection[1]):
             sentence = sentence_list.cell(row=line_counter+1, column=1).value
