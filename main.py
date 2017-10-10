@@ -1,13 +1,17 @@
 import sys
 from nltk import Nltk
 from commonTranslator import CommonTranslator
-from GetLiteral import Get_Literal
+#from GetLiteral import Get_Literal
 import time
 
 #main function
 def main():
+    translator = CommonTranslator()
+    # Chinese, Japanese, Korean, French, Russian, Portuguese, Spanish and Swedish
+    desired_languages = ['zh-CHS', 'ja', 'ko', 'fr', 'ru', 'pt', 'es', 'sv']
+
     #Test obtain paragraph & sentence
-    setTestData = Get_Literal()
+    #setTestData = Get_Literal()
     #l1=Get_Literal()
     #l1.setTestData()
     #print ("finish set up data")
@@ -20,16 +24,16 @@ def main():
     #print(S1)
 
     # Perform translations with a common iunterface
-'''
 
-    translator = CommonTranslator()
-    print( translator.translate('Google', 'Hello, World!', 'fr', 'EN') )
-    print( translator.translate('Bing', 'Hello, World!', 'fr', 'EN') )
-    print( translator.translate('Youdao', 'Hello, World!', 'fr', 'EN') )
-    print( translator.translate('All', 'Hello, World!', 'es', 'EN') )
+    # For each sentence convert to all desired languages and write to the excel file.
+    # Languages codes that we will be examining in our test are:
+    sentence = 'Hello World.'
+    for language in desired_languages:
+        translations = translator.translate('All', sentence, language, 'EN')
+        print (translations)
     print('Complete')
 
-'''
+
     # nltk
     #ownnltk = Nltk()
     #ownnltk.checkScore()
