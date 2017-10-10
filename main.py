@@ -1,5 +1,5 @@
 import sys
-from nltk import Nltk
+#from nltk import Nltk
 from commonTranslator import CommonTranslator
 #from GetLiteral import Get_Literal
 import time
@@ -23,6 +23,9 @@ def main():
     #S1=l1.Get_Sentence()
     #print(S1)
 
+    translator = CommonTranslator()
+
+    print( translator.translate('Bing', 'Hello, World!', 'fr', 'EN') )
     # Perform translations with a common iunterface
 
     # For each sentence convert to all desired languages and write to the excel file.

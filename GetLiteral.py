@@ -10,9 +10,6 @@ class Get_Literal(object):
         self.wordlist = ''
         self.wordlistSize = 0
 
-        #for the list of  random number
-        self.rand_list=[]
-
         #to record wether it is need to set new test data
         self.askSetNewTestData = ''
 
@@ -35,7 +32,6 @@ class Get_Literal(object):
         self.wordlist = requests.get(url = self.wordlistUrl)
         self.wordlist = self.wordlist.text.split()
         self.wordlistSize = len(self.wordlist)
-        self.rand_list = random.sample(range(0, self.wordlistSize),self.wordlistSize)
 
     def Print_Wordlist(self):
         self.Get_Wordlist()
@@ -60,7 +56,7 @@ class Get_Literal(object):
         while sentencesCount < int(self.numberOfTestData):
             try:
                 exceptFlag = False
-                paragraph = wikipedia.summary(self.wordlist[index])
+                paragraph = wikipedia.summary(self.wordlist[index], sentences = 1)
             except:
                 exceptFlag = True
                 print("error")

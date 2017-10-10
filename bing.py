@@ -9,9 +9,9 @@ from threading import Timer
 class Bing(object):
     def __init__(self):
             # subscription ID
-            self.subscriptionID= "c3136e53-8485-4dc0-b2fb-99ba109b8508"
+            self.subscriptionID= "e4aaf3e7-67d9-4661-9b1a-28e3d1defb3c"
             # key one
-            self.keyOne = "aad8cda03b66483da611e75226208cd8"
+            self.keyOne = "67d1935b9483446fba13e9c4469e9500"
             #key two
             self.keyTwo = "c3ea56f82dd5420cb0a08ea112726034"
             # tokenURL
