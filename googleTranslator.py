@@ -32,4 +32,5 @@ class Google(object):
             result  = self.translateClient.translate(phrase, target_language=target)
             return result
         else:
+            raise ValueError('The output language ' + target + ' is not available.')
             return None

@@ -31,7 +31,7 @@ class CommonTranslator(object):
         # Pass the request to the appropriate translate engine's function
         if translator.lower() == 'all':
             return {
-                'Google':   self.__translateGoogle(text, output_lang),
+                'Google':   self.__translateGoogle(text, output_lang_google),
                 'Bing':     self.__translateBing(text, output_lang, input_lang),
                 'Youdao':   self.__translateYoudao(text, output_lang, input_lang)
             }
