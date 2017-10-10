@@ -16,14 +16,17 @@ def main():
     desired_languages = ['zh-CHS', 'ja', 'ko', 'fr', 'ru', 'pt', 'es', 'sv']
 
     # Select which lines of the input sentences you wish to use
-    input_selection = [0, 200]
+    input_selection = [0, 5]
 
     # Name of the output file for the translations
-    file_name = 'translations.xlsx'
+    output_file_name = 'translations.xlsx'
+
+    # Name of the input source file containing the input sentences
+    input_file_name = 'csci318.xlsx'
 
     # Open the new excel sheet
     try:
-        output_file = openpyxl.load_workbook(file_name)
+        output_file = openpyxl.load_workbook(output_file_name)
     except:
         output_file = openpyxl.Workbook()
 
@@ -52,11 +55,14 @@ def main():
     #print('*********************************************')
     #S1=l1.Get_Sentence()
     #print(S1)
-    sentences = ['Hello World.', 'A very simple sentence', 'How are you?', 'Good morning']
 
-    # For each sentence convert to all desired languages and write to the excel sheets.
+    # Open the oringinal sentences list
+    input_file = openpyxl.load_workbook(filename=input_file_name, read_only=True)
+    sentence_list = input_file['Chinese']
     try:
-        for line_counter, sentence in enumerate(sentences):
+        for line_counter in range(input_selection[0], input_selection[1]):
+            sentence = sentence_list.cell(row=line_counter+1, column=1).value
+            # For each sentence convert to all desired languages and write to the excel sheets.
             row_entry = input_selection[0] + line_counter + 1
             # Write the original English sentence
             google_sheet.cell(row = row_entry, column = 1).value = sentence
@@ -74,7 +80,7 @@ def main():
 
     finally:
         # Save the file and notify the user
-        output_file.save(file_name)
+        output_file.save(output_file_name)
         print('Translations have been completed')
 
     # nltk
