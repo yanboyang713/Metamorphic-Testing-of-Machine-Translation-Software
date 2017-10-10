@@ -1,7 +1,7 @@
 import sys
 #from nltk import Nltk
 from commonTranslator import CommonTranslator
-#from GetLiteral import Get_Literal
+from GetLiteral import Get_Literal
 import time
 import openpyxl
 

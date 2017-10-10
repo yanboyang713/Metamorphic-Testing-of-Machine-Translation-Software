@@ -1,4 +1,5 @@
 import requests
+from random import *
 import random
 import wikipedia
 from openpyxl import Workbook
@@ -20,9 +21,10 @@ class Get_Literal(object):
         self.main()
 
     def main(self):
-        self.askSetNewTestData = input ("Do you want to set new test "Japanese"data? (Y/n) : ")
+        self.askSetNewTestData = input ("Do you want to set new test data? (Y/n) : ")
         if self.askSetNewTestData == 'Y' or self.askSetNewTestData == 'y':
             self.numberOfTestData = input ("How many sentences do you want to generate? ")
+            self.numberOfTestData = int(self.numberOfTestData)
             self.setTestData()
         else:
             print("error")
@@ -33,45 +35,42 @@ class Get_Literal(object):
         self.wordlist = self.wordlist.text.split()
         self.wordlistSize = len(self.wordlist)
 
-    def Print_Wordlist(self):
-        self.Get_Wordlist()
-        wordlistFile = open("Wordlist.txt", 'w', encoding='utf-8')
-        for i in range(0, self.wordlistSize):
-            wordlistFile.writelines(self.wordlist[self.rand_list[i]])
-            wordlistFile.writelines("\n")
-
-        wordlistFile.close()
-
     def setTestData(self):
-        self.Print_Wordlist()
+        self.Get_Wordlist()
         exceptFlag = False
         sentencesFile = open("Sentences.txt", "w", encoding='utf-8')
+        wordlistFile = open("Wordlist.txt", 'w', encoding='utf-8')
         sentencesCount = 0
-        index = 0
+
+
+        interval = int((self.wordlistSize / self.numberOfTestData) / 2)
+        startIndex = 0
 
         workbook = Workbook()
         workSheetOne = workbook.active
         workSheetOne.title = "Chinese"
 
-        while sentencesCount < int(self.numberOfTestData):
+        while sentencesCount < self.numberOfTestData:
             try:
                 exceptFlag = False
-                paragraph = wikipedia.summary(self.wordlist[index], sentences = 1)
+                randomNum = randint(startIndex, startIndex + interval - 1)    # Pick a random number between 1 and 100.
+                startIndex += interval
+                sentences = wikipedia.summary(self.wordlist[randomNum], sentences = 1)
             except:
                 exceptFlag = True
-                print("error")
             finally:
                 if exceptFlag == False:
-                    # Write the sentences into  the txt file
-                    sentences = paragraph.split('.')
-                    sentencesFile.writelines(sentences[0])
-                    sentencesFile.writelines('.')
-                    sentencesFile.writelines("\n")
-                    sentencesCount += 1
-                    workSheetOne['A' + str(sentencesCount)] = sentences[0] + "."
-                index += 1
+                    if sentences:
+                        # Write the sentences into  the txt file
+                        sentencesFile.writelines(sentences)
+                        sentencesFile.writelines("\n")
+                        # write send to wordlist
+                        wordlistFile.writelines(self.wordlist[randomNum])
+                        wordlistFile.writelines("\n")
+                        sentencesCount += 1
+                        workSheetOne['A' + str(sentencesCount)] = sentences
         sentencesFile.close()
-
+        wordlistFile.close()
         workSheetTwo = workbook.copy_worksheet (workSheetOne)
         workSheetTwo.title = "Swedish"
         workSheetThree = workbook.copy_worksheet (workSheetOne)
