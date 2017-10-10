@@ -38,8 +38,8 @@ class Get_Literal(object):
     def setTestData(self):
         self.Get_Wordlist()
         exceptFlag = False
-        sentencesFile = open("Sentences.txt", "w", encoding='utf-8')
-        wordlistFile = open("Wordlist.txt", 'w', encoding='utf-8')
+        #sentencesFile = open("Sentences.txt", "w", encoding='utf-8')
+        #wordlistFile = open("Wordlist.txt", 'w', encoding='utf-8')
         sentencesCount = 0
 
 
@@ -48,7 +48,7 @@ class Get_Literal(object):
 
         workbook = Workbook()
         workSheetOne = workbook.active
-        workSheetOne.title = "Chinese"
+        workSheetOne.title = "English"
 
         while sentencesCount < self.numberOfTestData:
             try:
@@ -62,18 +62,21 @@ class Get_Literal(object):
                 if exceptFlag == False:
                     if sentences:
                         # Write the sentences into  the txt file
-                        sentencesFile.writelines(sentences)
-                        sentencesFile.writelines("\n")
+                        #sentencesFile.writelines(sentences)
+                        #sentencesFile.writelines("\n")
                         # write send to wordlist
-                        wordlistFile.writelines(self.wordlist[randomNum])
-                        wordlistFile.writelines("\n")
+                        #wordlistFile.writelines(self.wordlist[randomNum])
+                        #wordlistFile.writelines("\n")
                         sentencesCount += 1
                         workSheetOne['A' + str(sentencesCount)] = sentences
-        sentencesFile.close()
-        wordlistFile.close()
+        #sentencesFile.close()
+        #wordlistFile.close()
+        '''
         workSheetTwo = workbook.copy_worksheet (workSheetOne)
         workSheetTwo.title = "Swedish"
         workSheetThree = workbook.copy_worksheet (workSheetOne)
         workSheetThree.title = "Japanese"
+
+        '''
         workbook.save("csci318.xlsx")
         print ("finah set test data")
