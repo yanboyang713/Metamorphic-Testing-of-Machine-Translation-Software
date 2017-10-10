@@ -25,15 +25,18 @@ class CommonTranslator(object):
     # Call this function to begin a translation
     # irregardless of the transaltion engine desired
     def translate(self, translator, text, output_lang, input_lang):
+        output_lang_google = output_lang
+        if output_lang == 'zh-CHS':
+            output_lang_google = 'zh-CN'
         # Pass the request to the appropriate translate engine's function
         if translator.lower() == 'all':
             return {
-                'Google':   self.__translateGoogle(text, output_lang),
+                'Google':   self.__translateGoogle(text, output_lang_google),
                 'Bing':     self.__translateBing(text, output_lang, input_lang),
                 'Youdao':   self.__translateYoudao(text, output_lang, input_lang)
             }
         if translator.lower() == 'google':
-            return self.__translateGoogle(text, output_lang)
+            return self.__translateGoogle(text, output_lang_google)
         elif translator.lower() == 'bing':
             return self.__translateBing(text, output_lang, input_lang)
         elif translator.lower() == 'youdao':
