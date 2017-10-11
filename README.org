@@ -24,8 +24,11 @@ Due to the result to be catched in python will be a list-structure ASCII, the re
 ** Get test case
 To be make to result valid and accurate, the size test-semaple is supposed to be large enough. 
 Considerd about the size of our group and the tools we have, the quatity of the testing sample is decided to be 1000 sentences.
-In the dictionary there are near 70 thousands words , therefore, we generate a list of random numbers in range of (0,69903) and select 1000 valid ones as the indexes of wordlist to select each word.
-This is the ideal situation because some words will be not able to find correctly in the actual programme running, which will be explained later. Therefore the random numbers to be run are likely to be more than 1000.
+In the dictionary there are near 70 thousands words , therefore, we generate a list of random numbers as word-obtaining indexes. 
+In case some words may not be able to match the paragraph correctly(that regrad as exception, will discuss later), the quantity of it will be approximately as twice as the test sample size(1000) which is about 2000.
+The approach  to get the random number is that: Firstly set a interval calculated by (size of dictionary /size of test sample)/2. 
+Then randomly select one number out of each interval-size range. Thus the random number list described above can be generated.
+When the program starts running, it will keep counting until 1000 valid ones has been selected as the indexes of wordlist to get the corrsponding words.
   
 
 The specific steps are:
@@ -39,7 +42,8 @@ The specific steps are:
 Exception Solution:
 As motioned above, there will be some words do not have the summary part or even not exist in wikipidia. 
 Thus we use an exception to deal with such cases so that the programme will jump over this incorrect search without recording and move to the next search.
-For every word, all the secntences that have been obtained will be written into text file as the results for the further translation and evalutaion.
+It is  also necessary to eliminate the empty entry situation with a conditianal judging statement.
+For every word, all the secntences that have been obtained will be written into excel file as the results for the further translation and evalutaion.
 
 To get and print the wordlist:
 The wordlist will be obtained automatically which will be uesed for getting the sentence test cases。

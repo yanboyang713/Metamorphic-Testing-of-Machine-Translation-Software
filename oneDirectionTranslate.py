@@ -16,7 +16,11 @@ def main():
     desired_languages = ['zh-CHS', 'ja', 'ko', 'fr', 'ru', 'pt', 'es', 'sv']
 
     # Select which lines of the input sentences you wish to use
+<<<<<<< HEAD
     input_selection = [100, 200]
+=======
+    input_selection = [5, 10]
+>>>>>>> origin/HEAD
 
     # Name of the output file for the translations
     output_file_name = 'translations.xlsx'
@@ -49,7 +53,7 @@ def main():
         for line_counter in range(input_selection[0], input_selection[1]):
             sentence = sentence_list.cell(row=line_counter+1, column=1).value
             # For each sentence convert to all desired languages and write to the excel sheets.
-            row_entry = input_selection[0] + line_counter + 1
+            row_entry = line_counter + 1
             # Write the original English sentence
             google_sheet.cell(row = row_entry, column = 1).value = sentence
             bing_sheet.cell(row = row_entry, column = 1).value = sentence
