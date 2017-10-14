@@ -28,7 +28,7 @@ def levenshteinDistance(string1, string2):
 
         lDist = distMatrix[l1-1,l2-1]
         ratio = (lSum - lDist)/lSum
-        return {'Levenshtein Distance' :lDist, 'Ratio ' :ratio}
+        return {'Levenshtein Distance' :lDist, 'Ratio' :ratio}
 
 
 
