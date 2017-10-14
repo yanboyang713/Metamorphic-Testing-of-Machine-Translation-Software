@@ -25,12 +25,14 @@ class FileManager:
 		try:
 			self._dataFile = openpyxl.load_workbook(fname)
 		except:
-			print '\'%s\' does not exist. constructing file..' % (fname)
+			print('\'%s\' does not exist. constructing file..' % (fname))
 			self._dataFile = openpyxl.Workbook()
 			self._dataFile.create_sheet('Google')
 			self._dataFile.create_sheet('Bing')
 			self._dataFile.create_sheet('Youdao')
 
+	def getLanguages(self):
+		return self._languages
 
 	# Returns selected language entries from a given Row, or the entire row.
 	def readRow(self, service, row_number, languages = _languages):
@@ -38,7 +40,7 @@ class FileManager:
 
 	
 	def readCell(self, service, row_number, language):
-		self.readRow(service, row_number, language)
+		return self.readRow(service, row_number, [language])[0]
 
 
 	# Writes a set of translations to the form for a given row. Can be the entire row of translations, or a subset.
@@ -51,7 +53,7 @@ class FileManager:
 			for index, v in enumerate(values):
 				self._dataFile[service].cell(row = row_number, column = self._languages.index(languages[index])+1).value = v
 		else:
-			raise ValueError('the lists \'values\' and \'languages\' not of same length.')
+			raise ValueError('the lists \'values\' and \'languages\' are not of same length.')
 				
 
 	def writeCell(self, service, row_number, language, value):
