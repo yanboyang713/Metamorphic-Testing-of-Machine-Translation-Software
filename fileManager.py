@@ -42,7 +42,7 @@ class FileManager:
 		return self._headers[sheet]
 
 	def getSheetNames(self):
-		return self._sheets
+		return self._headers.keys()
 
 	# Returns selected entries from a given Row, or the entire row.
 	# Return type is a list whose order matches the requested order of columns.
