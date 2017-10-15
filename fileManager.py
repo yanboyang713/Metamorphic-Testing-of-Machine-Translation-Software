@@ -38,7 +38,7 @@ class FileManager:
 				if write_header:
 					self.writeRow(sheet, 1, self._headers[sheet])
 
-	def getColumnNames(self, sheet = ()):
+	def getColumnNames(self, sheet):
 		return self._headers[sheet]
 
 	def getSheetNames(self):
