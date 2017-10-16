@@ -48,19 +48,31 @@ class CommonTranslator(object):
 
     # This function is responsible for performing all Google Translations
     def __translateGoogle(self, text, output_lang):
-        translated_text = self.__googleTranslator.translate(text, output_lang)
-        if translated_text != None:
-            return translated_text['translatedText']
-        else:
+        try:
+            translated_text = self.__googleTranslator.translate(text, output_lang)
+            if translated_text != None:
+                return translated_text['translatedText']
+            else:
+                return None
+        except Exception as e:
+            print(e)
             return None
 
     # This function is responsible for performing all Bing Translations
     def __translateBing(self, text, output_lang, input_lang):
-        self.__bingTranslator.getToken()
-        translated_text = self.__bingTranslator.translate(text, input_lang, output_lang)
-        return translated_text
+        try:
+            self.__bingTranslator.getToken()
+            translated_text = self.__bingTranslator.translate(text, input_lang, output_lang)
+            return translated_text
+        except Exception as e:
+            print(e)
+            return None
 
     # This function is responsible for performing all Youdao Translations
     def __translateYoudao(self, text, output_lang, input_lang):
-        translated_text = self.__youdaoTranslator.translate(input_lang, output_lang, text)
-        return translated_text
+        try:
+            translated_text = self.__youdaoTranslator.translate(input_lang, output_lang, text)
+            return translated_text
+        except Exception as e:
+            print(e)
+            return None
