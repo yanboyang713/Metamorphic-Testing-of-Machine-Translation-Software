@@ -16,11 +16,7 @@ def main():
     desired_languages = ['zh-CHS', 'ja', 'ko', 'fr', 'ru', 'pt', 'es', 'sv']
 
     # Select which lines of the input sentences you wish to use
-<<<<<<< HEAD
-    input_selection = [100, 200]
-=======
-    input_selection = [5, 10]
->>>>>>> origin/HEAD
+    input_selection = [516, 518]
 
     # Name of the output file for the translations
     output_file_name = 'translations.xlsx'
