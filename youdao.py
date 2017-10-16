@@ -11,12 +11,16 @@ class Youdao(object):
         self.pwd = "h8YekUjoOWwK15BhlpsXJ0bxkgXv4XQE"
 
     def translate(self, fromLanguage, toLanguage, translateText):
-        salt = random.randrange(10)
-        signString = self.appKey + translateText + str(salt) + self.pwd
-        sign = hashlib.md5(signString.encode())
-        url = "http://openapi.youdao.com/api?q=" + translateText + "&from=" + fromLanguage + "&to=" + toLanguage + "&appKey=" + self.appKey +  "&salt=" + str(salt) + "&sign=" + sign.hexdigest()
-        receiveMsg = requests.post(url)
-        jsonObj = json.loads(receiveMsg.text)
-        result = jsonObj["translation"]
-        leng = len(result)
-        return result[0]
+        try:
+            salt = random.randrange(10)
+            signString = self.appKey + translateText + str(salt) + self.pwd
+            sign = hashlib.md5(signString.encode())
+            url = "http://openapi.youdao.com/api?q=" + translateText + "&from=" + fromLanguage + "&to=" + toLanguage + "&appKey=" + self.appKey +  "&salt=" + str(salt) + "&sign=" + sign.hexdigest()
+            receiveMsg = requests.post(url)
+            jsonObj = json.loads(receiveMsg.text)
+            result = jsonObj["translation"]
+            leng = len(result)
+            return result[0]
+
+        except Exception:
+            raise ValueError("youdao have a error")
