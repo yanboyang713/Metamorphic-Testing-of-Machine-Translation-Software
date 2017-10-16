@@ -31,17 +31,13 @@ class TestCaseManager:
 
 		for service in services:
 			for row in rows:
-				# Grab the direct translation from file.
-				print('Retreiving direct translation..')
-				direct_translation = self._translation_file.readCell(service, row, target_language)
-
 				# Randomly select a side-language and grab its direct translation.
-				print('Retreiving alternate translation..')
 				random_language = random.choice([x for x in language_list if x != origin_language and x != target_language])	
-				intermediate_translation = self._translation_file.readCell(service, row, random_language)
 
-				# Translate this intermediate sentence into the same language as the direct translation.
-				print('Performing Side Translation..')
+				# Grab the original, direct, and side-translations from file.
+				original_phrase, direct_translation, intermediate_translation = self._translation_file.readRow(service, row, [origin_language, target_language, random_language])
+
+				# Translate the intermediate sentence into the same language as the direct translation.
 				alternate_translation = self._translator.translate(service, intermediate_translation, target_language, random_language)
 
 				# Compare the two translations.
@@ -50,13 +46,20 @@ class TestCaseManager:
 
 				# Record the results.
 				print('Recording Results..')
-				original_phrase = self._translation_file.readCell(service, row, origin_language)  # Grab original phrase for records.
 				self._results_file.appendEntry('Test Phrases', [service, original_phrase, origin_language, random_language, target_language, direct_translation, alternate_translation])
 				self._results_file.appendEntry('Test Results', [service, origin_language, target_language, score['Lev-Distance']])
 
 		print('Saving..')
 		self._results_file.save()
 
+	"""
+	Verifies a particular translation by performing a reverse translation back
+	to the origin lannguage.
+	NOTE: This is simply a special case of the uniDirectionalTest where the
+	target language is also the origin language.
+	"""
+	def biDirectionalTest(self, services, rows, origin_language = 'en'):
+		self.uniDirectionalTest(services, rows, origin_language, origin_language)
 
 	"""
 	Compares two strings and returns a score based on their similarity.
