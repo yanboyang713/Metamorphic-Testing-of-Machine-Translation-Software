@@ -7,7 +7,10 @@ This project we are apply metamorphic testing to the evaluation of translation s
 - Thirdly, we have using BLEU (bilingual evaluation understudy) and GMT (general text matcer) algorithm for evaluating the quality of translated text which has been using machine-translate.
 
 * Test case
-In our project, we have two categories of test case from Wikipedia. One is single sentence. Another one is paragraph. We are using a dictionaries as key word put in Wikipedia search engine for get single sentence and paragraph from Wikipedia.
+In our project, the of test cases are atomatically captured from the internet. 
+We are using a dictionaries as key word put in Wikipedia search engine for get single sentence from Wikipedia.
+
+
 
 ** Wikipedia API
 
@@ -15,13 +18,55 @@ In our project, we have two categories of test case from Wikipedia. One is singl
 Tushar, Shantanu (2013, pp. 219 - 220) show that WordList(Dictionary) is a standard file on all Unix and Unix-like operating systems. The wordList file is usually stored in /usr/share/dict/words or /usr/dict/words.[1]
 The wordList story more than 60,000 meanful words.
 
-** Get test case steps
-- We are traverse each key word from Dictionary.
+In this project, an online website is applied to obatin the dictionary which has generated the wordlist programmed by stndards Unix tools.[2]
+Due to the result to be catched in python will be a list-structure ASCII, the reuslt needs to be post-edited with spliting into individual words for using.   
+
+** Get test case
+To be make to result valid and accurate, the size test-semaple is supposed to be large enough. 
+Considerd about the size of our group and the tools we have, the quatity of the testing sample is decided to be 1000 sentences.
+In the dictionary there are near 70 thousands words , therefore, we generate a list of random numbers as word-obtaining indexes. 
+In case some words may not be able to match the paragraph correctly(that regrad as exception, will discuss later), the quantity of it will be approximately as twice as the test sample size(1000) which is about 2000.
+The approach  to get the random number is that: Firstly set a interval calculated by (size of dictionary /size of test sample)/2. 
+Then randomly select one number out of each interval-size range. Thus the random number list described above can be generated.
+When the program starts running, it will keep counting until 1000 valid ones has been selected as the indexes of wordlist to get the corrsponding words.
+  
+
+The specific steps are:
+- Traverse each key word from Dictionary by the the random index.
 - Put the key word into Wikipedia search engine(we have using Wikipedia APi)
-- Search this key word summary
-- If this key word have not recored in Wikipedia, We will be ingnore it, traverse the next key word.
-- If have result, all of summary will become our paragraph test case.
-- For the single sentence test case,
+- Search summary part of this key word in Wikipedia.
+- If this key word have not recored in Wikipedia, We will be ingnore it, traverse the next key word(The specific method will discuss later).
+- If have result, all of summary paragraph will be snatched.
+- Since the paragraph we get is in list structure of senctences, the first sentence of the summary paragraph will be splited out as a test case.
+
+Exception Solution:
+As motioned above, there will be some words do not have the summary part or even not exist in wikipidia. 
+Thus we use an exception to deal with such cases so that the programme will jump over this incorrect search without recording and move to the next search.
+It is  also necessary to eliminate the empty entry situation with a conditianal judging statement.
+For every word, all the secntences that have been obtained will be written into excel file as the results for the further translation and evalutaion.
+
+To get and print the wordlist:
+The wordlist will be obtained automatically which will be uesed for getting the sentence test cases。
+Firstly, it will ask if the user want to print the wordlist out beccause the word itself is not the test object.
+However that will make it more for the testers clear about where the test sentences come from. As a result, printing out the wordlist is optional.
+When the user choose to print it out, all the indexes the words that has valid paragraph searching are recorded and they will be used to get and print out all the words. 
+
+
+
+
+*Merge the transaltion result
+The test data sample has been divided to several parts for transalting in order to increase the efficiency of the work. 
+After the translation, different translated parts will be merged together into one excel file row by row with the identical order of the orginal test data sample
+It is an atomatic procedure through a program 
+
+*Vadliate the translation result
+The ultimate prodeuced excel file includes the orginal English senteces and the translation results of other eight laugnages(zh-CHS', 'ja', 'ko', 'fr', 'ru', 'pt', 'es', 'sv').
+One sentence is for a row and one language is for a column.
+For each sentence, the transaltion will be regards as invalid only if the transaltion result of every lauguage is invalid(which means empty in contents).
+In the way the program will make a judegment for each row so that the ones that has successful translation for at least one language will be kept.
+Ohterwise, the whole row will be set as empty.
+
+To check the validity of 
 
 * translate tool
 ** youdao translate
@@ -103,4 +148,6 @@ This is frist step for using bing translator API.
 
 
 * Reference List
-Tushar, Shantanu (2013). Linux Shell Scripting Cookbook. Birmingham, UK.: Packt Publishing. pp. 219–220. ISBN 978-1-78216-275-9.
+[1] Tushar, Shantanu (2013). Linux Shell Scripting Cookbook. Birmingham, UK.: Packt Publishing. pp. 219–220. ISBN 978-1-78216-275-9.
+[2] An English Word List. 2017. An English Word List. [ONLINE] Available at: http://www-personal.umich.edu/~jlawler/wordlist.html. [Accessed 05 October 2017].
+[3] 
