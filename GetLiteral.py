@@ -4,6 +4,17 @@ import random
 import wikipedia
 from openpyxl import Workbook
 
+'''
+Class for  generate a list of sentences as test data. The result will be written into an Excel file called "csci318.xlsx"
+
+Example Usage:
+    TestData=Get_Literal()
+    TestData.setTestData(samplesize=20)
+
+There will be some exception-thrown warning which won't affect the final result.
+
+'''
+
 class Get_Literal(object):
     def __init__(self):
         # wordlist is key word for search test data in wikipedia. There are two kind of test data, one is paragraph, another one is single sentences
@@ -11,42 +22,27 @@ class Get_Literal(object):
         self.wordlist = ''
         self.wordlistSize = 0
 
-        #to record wether it is need to set new test data
-        self.askSetNewTestData = ''
-
         #number of test need to generate
         self.numberOfTestData = 0;
 
-        #run at begin get wordlist
-        self.main()
-
-    def main(self):
-        self.askSetNewTestData = input ("Do you want to set new test data? (Y/n) : ")
-        if self.askSetNewTestData == 'Y' or self.askSetNewTestData == 'y':
-            self.numberOfTestData = input ("How many sentences do you want to generate? ")
-            self.numberOfTestData = int(self.numberOfTestData)
-            self.setTestData()
-        else:
-            print("error")
-            return;
-
+    #run at begin get wordlist
     def Get_Wordlist(self):
         self.wordlist = requests.get(url = self.wordlistUrl)
         self.wordlist = self.wordlist.text.split()
         self.wordlistSize = len(self.wordlist)
 
-    def setTestData(self):
+    #parameter "sample "to tell how many sentences do you want to generate
+    def setTestData(self,samplesize):
         self.Get_Wordlist()
         exceptFlag = False
+        self.numberOfTestData=samplesize
         #sentencesFile = open("Sentences.txt", "w", encoding='utf-8')
         #wordlistFile = open("Wordlist.txt", 'w', encoding='utf-8')
         sentencesCount = 0
 
 
         interval = int((self.wordlistSize / self.numberOfTestData) / 2)
-        #startIndex = 0
-
-        startIndex = int((self.wordlistSize / 1000) / 2) * 1000
+        startIndex = 0
 
         workbook = Workbook()
         workSheetOne = workbook.active
