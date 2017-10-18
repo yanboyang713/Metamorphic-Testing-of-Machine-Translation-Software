@@ -51,6 +51,23 @@ Firstly, it will ask if the user want to print the wordlist out beccause the wor
 However that will make it more for the testers clear about where the test sentences come from. As a result, printing out the wordlist is optional.
 When the user choose to print it out, all the indexes the words that has valid paragraph searching are recorded and they will be used to get and print out all the words. 
 
+
+
+
+*Merge the transaltion result
+The test data sample has been divided to several parts for transalting in order to increase the efficiency of the work. 
+After the translation, different translated parts will be merged together into one excel file row by row with the identical order of the orginal test data sample
+It is an atomatic procedure through a program 
+
+*Vadliate the translation result
+The ultimate prodeuced excel file includes the orginal English senteces and the translation results of other eight laugnages(zh-CHS', 'ja', 'ko', 'fr', 'ru', 'pt', 'es', 'sv').
+One sentence is for a row and one language is for a column.
+For each sentence, the transaltion will be regards as invalid only if the transaltion result of every lauguage is invalid(which means empty in contents).
+In the way the program will make a judegment for each row so that the ones that has successful translation for at least one language will be kept.
+Ohterwise, the whole row will be set as empty.
+
+To check the validity of 
+
 * translate tool
 ** youdao translate
 Youdao (有道) is a search engine released by Chinese internet company NetEase (網易).
