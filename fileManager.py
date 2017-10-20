@@ -44,6 +44,9 @@ class FileManager:
 	def getSheetNames(self):
 		return self._headers.keys()
 
+	def getNumberRows(self, sheet):
+		return self._dataFile[sheet].max_row
+
 	# Returns selected entries from a given Row, or the entire row.
 	# Return type is a list whose order matches the requested order of columns.
 	def readRow(self, sheet, row_number, columns = None):
