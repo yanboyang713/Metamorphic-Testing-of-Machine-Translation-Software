@@ -3,6 +3,7 @@ import openpyxl
 import random
 import warnings
 from commonTranslator import CommonTranslator
+from cosine import calculateCosineSimilarity
 from fileManager import FileManager
 from levDist import levenshteinDistance
 from nltk.translate.bleu_score import SmoothingFunction
@@ -16,7 +17,7 @@ class TestCaseManager:
 		self._translation_file = FileManager()
 		self._results_file = FileManager(results_file,
                                          [['Service', 'Test Phrase', 'Source Language', 'Intermediate Language', 'Target Language', 'Direct Translation', 'Alternate Translation'],
-                                          ['Service', 'Source Language', 'Target Language', 'Lev-Distance', 'BLEU-Score']],
+                                          ['Service', 'Source Language', 'Target Language', 'Lev-Distance', 'BLEU-Score', 'Cosine-Similarity']],
                                          ['Test Phrases', 'Test Results'],
                                          write_header = True)
 
@@ -65,7 +66,7 @@ class TestCaseManager:
 
 					# Record the results.
 					self._results_file.appendEntry('Test Phrases', [service, original_phrase, origin_language, random_language, target_language, direct_translation, alternate_translation])
-					self._results_file.appendEntry('Test Results', [service, origin_language, target_language, score['Lev-Distance'], score['BLEU-Score']])
+					self._results_file.appendEntry('Test Results', [service, origin_language, target_language, score['Lev-Distance'], score['BLEU-Score'], score['Cosine-Similarity']])
 
 		print('Saving..')
 		self._results_file.save()
@@ -87,7 +88,7 @@ class TestCaseManager:
 	"""
 	def compare(self, phrase1, phrase2, metrics = None):
 		if metrics is None:
-			metrics = ['Lev-Distance', 'BLEU-Score']
+			metrics = ['Lev-Distance', 'BLEU-Score', 'Cosine-Similarity']
 		
 		results = dict()
 
@@ -97,6 +98,9 @@ class TestCaseManager:
 		if 'BLEU-Score' in metrics:
 			results['BLEU-Score'] = nltk.translate.bleu_score.sentence_bleu([phrase1.split()], phrase2.split(), smoothing_function = SmoothingFunction().method2)
 
+		if 'Cosine-Similarity' in metrics:
+			results['Cosine-Similarity'] = calculateCosineSimilarity(phrase1, phrase2)
+
 		return results
 
 	"""
@@ -105,7 +109,7 @@ class TestCaseManager:
 	"""
 	def recomputeMetricResults(self, metric, rows = None):
 		if rows is None:
-			rows = range(2, self._results_file.getNumberRows('Test Phrases'))
+			rows = range(2, self._results_file.getNumberRows('Test Phrases') + 1)
 
 		for row in rows:
 			# Get the sample strings for this observation.
@@ -117,3 +121,4 @@ class TestCaseManager:
 			# Write result to file
 			self._results_file.writeRow('Test Results', row, [score[metric]], [metric])
 		self._results_file.save()
+
