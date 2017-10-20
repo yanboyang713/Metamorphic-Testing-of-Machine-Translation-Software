@@ -23,7 +23,6 @@ class TestCaseManager:
 		# Assumes structure of results file
 		self._language_list = self._translation_file.getColumnNames('Google')
 
-
 	"""
 	Verifies a particular translation by performing one additional 'side-translation'
 	and comparing the result.
@@ -79,7 +78,6 @@ class TestCaseManager:
 	"""
 	def biDirectionalTest(self, services, rows, origin_language = 'en'):
 		self.uniDirectionalTest(services, rows, origin_language, origin_language)
-
 
 	"""
 	Compares two strings and returns a score based on their similarity.

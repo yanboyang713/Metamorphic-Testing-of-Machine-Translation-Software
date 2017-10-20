@@ -42,7 +42,9 @@ class Get_Literal(object):
 
 
         interval = int((self.wordlistSize / self.numberOfTestData) / 2)
-        startIndex = 0
+        #startIndex = 0
+
+        startIndex = int((self.wordlistSize / 1000) / 2) * 1000
 
         workbook = Workbook()
         workSheetOne = workbook.active
