@@ -36,7 +36,9 @@ class TestCaseManager:
 			rows = range(1, self._translation_file.getNumberRows('Google'))
 
 		for service in services:
+			print('Performing', service, 'translations..')
 			for row in rows:
+				print('   Analysing row', row)
 				remaining_languages = [x for x in self._language_list if x != origin_language and x != target_language]
 
 				# Randomly select a side-language and grab its direct translation.
@@ -50,7 +52,7 @@ class TestCaseManager:
 
 				# If failed translation, keep trying with different selection
 				while len(remaining_languages) > 1 and alternate_translation is None:
-					warnings.warn('Failed to translate from', random_language, 'to', target_language, '. Repeated failures may introduce biased results.', RuntimeWarning)
+					print('WARNING: Failed to translate from', random_language, 'to', target_language, '. Repeated failures may introduce biased results.')
 					remaining_languages.remove(random_language)
 					random_language = random.choice(remaining_languages)
 					alternate_translation = self._translator.translate(service, intermediate_translation, target_language, random_language)
@@ -59,7 +61,7 @@ class TestCaseManager:
 				if alternate_translation is None:
 					print('Unable to perform side-translation. Recording as N/A..')
 					self._results_file.appendEntry('Test Phrases', [service, original_phrase, origin_language, 'N/A', target_language, direct_translation, 'N/A'])
-					self._results_file.appendEntry('Test Results', [service, origin_language, target_language, 'N/A'])
+					self._results_file.appendEntry('Test Results', [service, origin_language, target_language, 'N/A', 'N/A', 'N/A'])
 				else:
 					# Compare the two translations.
 					score = self.compare(direct_translation, alternate_translation)
@@ -68,8 +70,8 @@ class TestCaseManager:
 					self._results_file.appendEntry('Test Phrases', [service, original_phrase, origin_language, random_language, target_language, direct_translation, alternate_translation])
 					self._results_file.appendEntry('Test Results', [service, origin_language, target_language, score['Lev-Distance'], score['BLEU-Score'], score['Cosine-Similarity']])
 
-		print('Saving..')
-		self._results_file.save()
+			print('Saving Progress..')
+			self._results_file.save()
 
 	"""
 	Verifies a particular translation by performing a reverse translation back
