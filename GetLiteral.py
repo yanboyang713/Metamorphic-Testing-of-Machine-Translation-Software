@@ -78,5 +78,5 @@ class Get_Literal(object):
         workSheetThree.title = "Japanese"
 
         '''
-        workbook.save("csci318.xlsx")
-        print ("finah set test data")
+        workbook.save("translations.xlsx")
+        print ("Finished set test data")
