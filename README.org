@@ -10,16 +10,17 @@ This project we are apply metamorphic testing to the evaluation of translation s
 In our project, the of test cases are atomatically captured from the internet. 
 We are using a dictionaries as key word put in Wikipedia search engine for get single sentence from Wikipedia.
 
-
-
-** Wikipedia API
-
 ** Dictionary
 Tushar, Shantanu (2013, pp. 219 - 220) show that WordList(Dictionary) is a standard file on all Unix and Unix-like operating systems. The wordList file is usually stored in /usr/share/dict/words or /usr/dict/words.[1]
 The wordList story more than 60,000 meanful words.
 
 In this project, an online website is applied to obatin the dictionary which has generated the wordlist programmed by stndards Unix tools.[2]
-Due to the result to be catched in python will be a list-structure ASCII, the reuslt needs to be post-edited with spliting into individual words for using.   
+Due to the result to be catched in python will be a list-structure ASCII, the reuslt needs to be post-edited with spliting into individual words for using.  
+
+** Wikipedia API
+Wikipedia API is a Python library for accessing and parsing data from Wikipedia. It is a powerful and convenient tool to obatin text, links and images form wikipidia.
+Due to some literal contents are needed as the test samples in the project, the API are applied to search the sentences to build the test datasets.
+Library address: https://pypi.python.org/pypi/wikipedia
 
 ** Get test case
 To be make to result valid and accurate, the size test-semaple is supposed to be large enough. 
@@ -39,19 +40,11 @@ The specific steps are:
 - If have result, all of summary paragraph will be snatched.
 - Since the paragraph we get is in list structure of senctences, the first sentence of the summary paragraph will be splited out as a test case.
 
-Exception Solution:
-As motioned above, there will be some words do not have the summary part or even not exist in wikipidia. 
-Thus we use an exception to deal with such cases so that the programme will jump over this incorrect search without recording and move to the next search.
-It is  also necessary to eliminate the empty entry situation with a conditianal judging statement.
-For every word, all the secntences that have been obtained will be written into excel file as the results for the further translation and evalutaion.
-
-To get and print the wordlist:
-The wordlist will be obtained automatically which will be uesed for getting the sentence test cases。
-Firstly, it will ask if the user want to print the wordlist out beccause the word itself is not the test object.
-However that will make it more for the testers clear about where the test sentences come from. As a result, printing out the wordlist is optional.
-When the user choose to print it out, all the indexes the words that has valid paragraph searching are recorded and they will be used to get and print out all the words. 
-
-
+	Exception Solution:
+	As motioned above, there will be some words do not have the summary part or even not exist in wikipidia. 
+	Thus we use an exception to deal with such cases so that the programme will jump over this incorrect search without recording and move to the next search.
+	It is  also necessary to eliminate the empty entry situation with a conditianal judging statement.
+	For every word, all the secntences that have been obtained will be written into excel file as the results for the further translation and evalutaion.
 
 
 *Merge the transaltion result
@@ -66,7 +59,6 @@ For each sentence, the transaltion will be regards as invalid only if the transa
 In the way the program will make a judegment for each row so that the ones that has successful translation for at least one language will be kept.
 Ohterwise, the whole row will be set as empty.
 
-To check the validity of 
 
 * translate tool
 ** youdao translate
