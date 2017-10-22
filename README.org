@@ -19,10 +19,15 @@ Please note that the results from our analysis have been left in the local_test_
 
 
 * Overview
-This project we are apply metamorphic testing to the evaluation of translation software. We are using round-trip translation metamorphic relation.
-- Firstly, we have get test case from Wikipedia. Totally, have two category, one is single sentence, another is paragraph, which only comprise with sentences, not with list etc.
+The task of assessing the quality of machine translation software is naturally difficult, due to the lack of test oracle. This is known as the oracle problem. To address the inability in addressing translations, metamorphic testing can be applied to generate a suitable test case such that the metamorphic relations of translations are not violated. In this study, we will focus on the machine translation services: Google, Bing, and Youdao,
+and will attempt to use a metamorphic approach to quantify the consistency of each of these services as well as rank their general performance on a select number of focus languages. In this study we consider English, Chinese, Japanese, Korean, French, Russian, Portuguese, Spanish, and This project we are apply metamorphic testing to the evaluation of translation software. We are using round-trip translation metamorphic relation.
+- Firstly, we have get test case from Wikipedia.
 - Secondly, we have evaluation three translation tools, Youdao translation, bing translation and google translation
-- Thirdly, we have using BLEU (bilingual evaluation understudy) and GMT (general text matcer) algorithm for evaluating the quality of translated text which has been using machine-translate.
+- Thirdly, we have using
++ BLEU (Bilingual Evaluation Understudy) --- One of the most popular forms of evaluation as it correlates highly with human judgements of quality.
++ Levenshtein Distance --- The number of deletions, insertions or substitutions required to transform one string into another.
++ Cosine Similarity
+algorithm for evaluating the quality of translated text which has been using machine-translate.
 
 * Test case
 In our project, the of test cases are atomatically captured from the internet. We are using a dictionaries as key word put in Wikipedia search engine for get single sentence from Wikipedia.
