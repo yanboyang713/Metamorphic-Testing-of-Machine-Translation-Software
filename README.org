@@ -25,8 +25,7 @@ This project we are apply metamorphic testing to the evaluation of translation s
 - Thirdly, we have using BLEU (bilingual evaluation understudy) and GMT (general text matcer) algorithm for evaluating the quality of translated text which has been using machine-translate.
 
 * Test case
-In our project, the of test cases are atomatically captured from the internet. 
-We are using a dictionaries as key word put in Wikipedia search engine for get single sentence from Wikipedia.
+In our project, the of test cases are atomatically captured from the internet. We are using a dictionaries as key word put in Wikipedia search engine for get single sentence from Wikipedia.
 
 ** Dictionary
 Tushar, Shantanu (2013, pp. 219 - 220) show that WordList(Dictionary) is a standard file on all Unix and Unix-like operating systems. The wordList file is usually stored in /usr/share/dict/words or /usr/dict/words.[1]
@@ -36,47 +35,24 @@ In this project, an online website is applied to obatin the dictionary which has
 Due to the result to be catched in python will be a list-structure ASCII, the reuslt needs to be post-edited with spliting into individual words for using.  
 
 ** Wikipedia API
-Wikipedia API is a Python library for accessing and parsing data from Wikipedia. It is a powerful and convenient tool to obatin text, links and images form wikipidia.
-Due to some literal contents are needed as the test samples in the project, the API are applied to search the sentences to build the test datasets.
-Library address: https://pypi.python.org/pypi/wikipedia
+Wikipedia API is a Python library for accessing and parsing data from Wikipedia. It is a powerful and convenient tool to obatin text, links and images form wikipidia. Due to some literal contents are needed as the test samples in the project, the API are applied to search the sentences to build the test datasets. Library address: https://pypi.python.org/pypi/wikipedia
 
 ** Get test case
-To be make to result valid and accurate, the size test-semaple is supposed to be large enough. 
-Considerd about the size of our group and the tools we have, the quatity of the testing sample is decided to be 1000 sentences.
-In the dictionary there are near 70 thousands words , therefore, we generate a list of random numbers as word-obtaining indexes. 
-In case some words may not be able to match the paragraph correctly(that regrad as exception, will discuss later), the quantity of it will be approximately as twice as the test sample size(1000) which is about 2000.
-The approach  to get the random number is that: Firstly set a interval calculated by (size of dictionary /size of test sample)/2. 
-Then randomly select one number out of each interval-size range. Thus the random number list described above can be generated.
-When the program starts running, it will keep counting until 1000 valid ones has been selected as the indexes of wordlist to get the corrsponding words.
-  
-
+To be make to result valid and accurate, the size test-sample is supposed to be large enough. Considered about the size of our group and the tools we have, the quantity of the testing sample is decided to be 1000 sentences. In the dictionary there are near 70 thousands words. In the wordlist same meaningful word may have different form.
+[[./img/wordlist.png]]
+We want to reduce probability have the same sentences, so we decide generate each random number from interval range for avoid get same sentences. The interval size is (size of dictionary /size of test sample) / 2, divide by 2 for let rest part to solve WiKi raise Exception or return empty string situation. We also need a lower bound variable for record start point for generate random number. And upper bound = lower bound + interval size. As a result, each time when we get random number in each interval. We only need generate random number from lower bound to upper bound. After give upper bound value to lower bound and calculate new upper bound. When the program starts running, it will keep counting until 1000 valid sentences has been written to excel file. The ratio of seeds is about 1.43% in the wordlist except WiKi raise Exception or return empty string situation. The real radio of seeds will a little bit high than 1.43%. If the radio of seeds is equal to 100% mean must be have same sentences. In our 1000 test data, we have got very lower repetitive rate.
 The specific steps are:
-- Traverse each key word from Dictionary by the the random index.
-- Put the key word into Wikipedia search engine(we have using Wikipedia APi)
-- Search summary part of this key word in Wikipedia.
-- If this key word have not recored in Wikipedia, We will be ingnore it, traverse the next key word(The specific method will discuss later).
-- If have result, all of summary paragraph will be snatched.
-- Since the paragraph we get is in list structure of senctences, the first sentence of the summary paragraph will be splited out as a test case.
+- Using above method get the seed word
+- Uing seed word query Wikipedia search engine(we have using Wikipedia APi)
+- get first sentence from summary part(return by Wikipedia).
+- If Wikipedia raise Exception or return empty string, We will ignore it, traverse the next interval (The specific method will discuss later).
+- If have valid sentence return, we will direct written to excel file.
 
-	Exception Solution:
-	As motioned above, there will be some words do not have the summary part or even not exist in wikipidia. 
-	Thus we use an exception to deal with such cases so that the programme will jump over this incorrect search without recording and move to the next search.
-	It is  also necessary to eliminate the empty entry situation with a conditianal judging statement.
-	For every word, all the secntences that have been obtained will be written into excel file as the results for the further translation and evalutaion.
+* Merge the transaltion result
+The test data sample has been divided to several parts for transalting in order to increase the efficiency of the work. After the translation, different translated parts will be merged together into one excel file row by row with the identical order of the orginal test data sample. It is an atomatic procedure through a program.
 
-
-*Merge the transaltion result
-The test data sample has been divided to several parts for transalting in order to increase the efficiency of the work. 
-After the translation, different translated parts will be merged together into one excel file row by row with the identical order of the orginal test data sample
-It is an atomatic procedure through a program 
-
-*Vadliate the translation result
-The ultimate prodeuced excel file includes the orginal English senteces and the translation results of other eight laugnages(zh-CHS', 'ja', 'ko', 'fr', 'ru', 'pt', 'es', 'sv').
-One sentence is for a row and one language is for a column.
-For each sentence, the transaltion will be regards as invalid only if the transaltion result of every lauguage is invalid(which means empty in contents).
-In the way the program will make a judegment for each row so that the ones that has successful translation for at least one language will be kept.
-Ohterwise, the whole row will be set as empty.
-
+* Vadliate the translation result
+The ultimate prodeuced excel file includes the orginal English senteces and the translation results of other eight laugnages(zh-CHS', 'ja', 'ko', 'fr', 'ru', 'pt', 'es', 'sv'). One sentence is for a row and one language is for a column. For each sentence, the transaltion will be regards as invalid only if the transaltion result of every lauguage is invalid(which means empty in contents). In the way the program will make a judegment for each row so that the ones that has successful translation for at least one language will be kept. Ohterwise, the whole row will be set as empty.
 
 * translate tool
 ** youdao translate
