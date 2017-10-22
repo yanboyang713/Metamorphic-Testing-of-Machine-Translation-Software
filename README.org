@@ -1,5 +1,23 @@
 
 #+TITLE: Automatic Evaluation of Machine Translation Software
+
+* Quick Start Guide
+To run the program you will need to install Python 3 and PIP3. A file setup.sh has been provided to allow for the installation of dependencies, however if using a non-linux system the user will need to manually install dependencies.
+
+To execute the program:
+- Run the main.py file.
+- If you wish to generate test data, that is lines to be translated, enter 'y' at the prompt. Then enter the number of lines to generate.
+- Enter the starting line for the excel file
+- Enter the final line for the excel file
+- Wait until the analysis has been completed
+- You will need to terminate the program manually with ctrl-c as there is a background job to refresh a token with a translating service.
+- The results of the anlysis will be located in the file local_test_results.xlxs
+
+Should the security keys for any of the translation services become out of date or invalidated you will need to update them before executing the file. Instructions which can be found included for each translator.
+
+Please note that the results from our analysis have been left in the local_test_results.xlxs file for the sake of completeness, new results from any further execution of the program will be appended to the existing file.
+
+
 * Overview
 This project we are apply metamorphic testing to the evaluation of translation software. We are using round-trip translation metamorphic relation.
 - Firstly, we have get test case from Wikipedia. Totally, have two category, one is single sentence, another is paragraph, which only comprise with sentences, not with list etc.

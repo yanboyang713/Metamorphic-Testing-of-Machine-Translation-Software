@@ -5,9 +5,9 @@ from google.oauth2 import service_account
 # validates the target language.
 class Google(object):
     def __init__(self):
-        # When the sample credit has expired a new service key will need to be genreated.
+        # When the sample credit has expired a new service key will need to be genreated and entered here
         translateCredentials = service_account.Credentials.from_service_account_file(
-        'CSCI318 Translate Testing-901005799451.json')
+        'Google Credentials.json')
         self.translateClient = translate.Client(credentials=translateCredentials)
         # This is a list of all posible languages that can be specified for the
         # Google translate API
