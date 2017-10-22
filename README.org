@@ -39,7 +39,9 @@ Wikipedia API is a Python library for accessing and parsing data from Wikipedia.
 
 ** Get test case
 To be make to result valid and accurate, the size test-sample is supposed to be large enough. Considered about the size of our group and the tools we have, the quantity of the testing sample is decided to be 1000 sentences. In the dictionary there are near 70 thousands words. In the wordlist same meaningful word may have different form.
+
 [[./img/wordlist.png]]
+
 We want to reduce probability have the same sentences, so we decide generate each random number from interval range for avoid get same sentences. The interval size is (size of dictionary /size of test sample) / 2, divide by 2 for let rest part to solve WiKi raise Exception or return empty string situation. We also need a lower bound variable for record start point for generate random number. And upper bound = lower bound + interval size. As a result, each time when we get random number in each interval. We only need generate random number from lower bound to upper bound. After give upper bound value to lower bound and calculate new upper bound. When the program starts running, it will keep counting until 1000 valid sentences has been written to excel file. The ratio of seeds is about 1.43% in the wordlist except WiKi raise Exception or return empty string situation. The real radio of seeds will a little bit high than 1.43%. If the radio of seeds is equal to 100% mean must be have same sentences. In our 1000 test data, we have got very lower repetitive rate.
 The specific steps are:
 - Using above method get the seed word
