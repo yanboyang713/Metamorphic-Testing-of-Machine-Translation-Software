@@ -136,8 +136,16 @@ This is frist step for using bing translator API.
 [[./img/azure.png]]
 [[./img/subscription.png]]
 
-*** Using bing API guide
-**** get authentication token
+** Obtaining A Google Cloud Translate API Key
+1. Go to the resource manager and create a new project: https://console.cloud.google.com/cloud-resource-manager
+2. Select and enable billing from the left hand panel on the following page: https://console.cloud.google.com/home/dashboard
+3. Return to your new project and search for translate in the search panel at the top.
+4. Select and enable the Google Cloud Translation API.
+5. Select credentials fomr the left hand menu and then select Create Credentials
+6. Choose a service account key, create a new service account and then download the JSON file.
+7. Rename the downloaded file 'Google Credentials.json' and save it in the root directory of the project.
+
+Further instructions can be found in Google's Quickstart Guide: https://cloud.google.com/translate/docs/getting-started
 
 
 * Reference List
